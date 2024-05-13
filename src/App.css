@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: 300;
+    box-sizing: border-box;
+    background-color: #FFF;
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 12px;
+}
+
+body,
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+textarea {
+    resize: none;
+}
