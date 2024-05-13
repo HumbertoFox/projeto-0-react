@@ -9,7 +9,13 @@ Currently, two official plugins are available:
 
 ## Biblioteca para estilização.
 
+npm install
+
 npm install styled-components
+
+npm install @hookform/resolvers
+
+npm i -D react-router-dom
 
 ##
 
