@@ -2,7 +2,7 @@ import React, {
     useState
 } from "react"
 import {
-    HeaderMenu,
+    MenuHeader,
     ImgEnterprise
 } from "../../style/headerstyle";
 import EnterpriseImg from "../../assets/dinheiro.png";
@@ -14,7 +14,7 @@ import AgendaImg from "../../assets/agenda.png";
 import ConfirmImg from "../../assets/confirmar.png";
 import ReportImg from "../../assets/relatorio.png";
 
-export const Header = () => {
+export const HeaderMenu = () => {
 
     const [navMenuLi, SetNavMenuLi] = useState("Relatório");
 
@@ -23,7 +23,7 @@ export const Header = () => {
     };
 
     return (
-        <HeaderMenu>
+        <MenuHeader>
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
             <nav>
                 <ul>
@@ -85,6 +85,6 @@ export const Header = () => {
                     </li>
                 </ul>
             </nav>
-        </HeaderMenu>
+        </MenuHeader>
     )
 }

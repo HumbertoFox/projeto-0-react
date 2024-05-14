@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const HeaderMenu = styled.header`
+const MenuHeader = styled.header`
     width: 250px;
     height: 100vh;
     display: flex;
@@ -66,4 +66,4 @@ const ImgEnterprise = styled.img`
     }
 `;
 
-export { HeaderMenu, ImgEnterprise };
+export { MenuHeader, ImgEnterprise };

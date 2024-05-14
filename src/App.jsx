@@ -1,10 +1,12 @@
 import './App.css'
-import { Header } from './components/header/header'
+import { HeaderMenu } from './components/header/header'
+import { AppRouters } from './pages/routes'
 
 function App() {
   return (
     <>
-      <Header />
+      <HeaderMenu />
+      <AppRouters />
     </>
   )
 }
