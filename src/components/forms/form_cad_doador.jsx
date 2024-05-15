@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { DivBtn, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 
 export const FormCadDoador = () => {
 
@@ -9,7 +10,7 @@ export const FormCadDoador = () => {
     } = useForm();
 
     return (
-        <form method="POST" action="">
+        <FormDoador method="POST" action="">
             <label htmlFor="nome">Nome do Doador</label>
             <input type="text" name="nome" id="nome" />
             <label htmlFor="contato1">Número Móvel do Responsável</label>
@@ -24,14 +25,14 @@ export const FormCadDoador = () => {
             <input type="text" name="rua" id="rua" />
             <label htmlFor="nunresidencia">Número da Casa/Edifício/Empresa</label>
             <input type="text" name="nunresidencia" id="nunresidencia" />
-            <div>
+            <DivRadio>
                 <input type="radio" name="tiporesidencia" id="casa" value="casa" />
                 <label htmlFor="casa">Casa</label>
                 <input type="radio" name="tiporesidencia" id="edificio" value="edificio" />
                 <label htmlFor="edificio">Edifício</label>
                 <input type="radio" name="tiporesidencia" id="empresa" value="empresa" />
                 <label htmlFor="empresa">Empresa</label>
-            </div>
+            </DivRadio>
             <label htmlFor="cnpj">Cnpj</label>
             <input type="number" name="cnpj" id="cnpj" />
             <label htmlFor="predio">Nome do Edifício/Empresa</label>
@@ -46,14 +47,10 @@ export const FormCadDoador = () => {
             <input type="text" name="bairro" id="bairro" />
             <label htmlFor="cidade">Cidade</label>
             <input type="text" name="cidade" id="cidade" />
-            <div >
-                <div>
-                    <input type="submit" name="cadastrar_doacao" id="cadastrar_doacao" />
-                </div>
-                <div>
-                    <input type="submit" name="cadastrar_doador" id="cadastrar_doador" />
-                </div>
-            </div>
-        </form>
+            <DivBtn>
+                <input type="submit" title="Cadastrar Doador e ir para Cadastrar Doação" name="cadastrar_doacao" id="cadastrar_doacao" value={"Cad Doador/Doação"} />
+                <input type="submit" title="Cadastrar Doador" name="cadastrar_doador" id="cadastrar_doador" value={"Cadastrar Doador"} />
+            </DivBtn>
+        </FormDoador>
     )
 }
