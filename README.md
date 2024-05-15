@@ -15,7 +15,7 @@ npm install styled-components
 
 npm install @hookform/resolvers
 
-npm i -D react-router-dom
+npm install -D react-router-dom
 
 npm install react-hook-form
 
