@@ -1,10 +1,11 @@
 import { FormCadDoador } from "../components/forms/form_cad_doador"
-import { MainCadDoador } from "../style/caddoadorstyle"
+import { MainPrimary } from "../style/mainprimarystyle"
+
 
 export const CadDoadorPage = () => {
     return (
-        <MainCadDoador>
+        <MainPrimary>
             <FormCadDoador />
-        </MainCadDoador>
+        </MainPrimary>
     )
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MainCadDoador = styled.main`
+const MainPrimary = styled.main`
     width: 100%;
     min-height: 100vh;
     padding: 10px 0;
@@ -11,4 +11,4 @@ const MainCadDoador = styled.main`
     }
 `;
 
-export { MainCadDoador };
+export { MainPrimary };
