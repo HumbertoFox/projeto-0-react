@@ -27,7 +27,8 @@ export const HeaderMenu = () => {
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
             <nav>
                 <ul>
-                    <li title="Cadastrar Doação"
+                    <li key={"Cadastrar Doação"}
+                        title="Cadastrar Doação"
                         name="cadastro_doacao"
                         className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Cadastrar Doação")}
@@ -35,7 +36,8 @@ export const HeaderMenu = () => {
                         <img src={ClothesImg} alt="Icon Doação" />
                         <span>Cadastrar Doação</span>
                     </li>
-                    <li title="Cadastrar Doador"
+                    <li key={"Cadastrar Doador"}
+                        title="Cadastrar Doador"
                         name="cadastro_doador"
                         className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Cadastrar Doador")}
@@ -43,7 +45,8 @@ export const HeaderMenu = () => {
                         <img src={UserImg} alt="Icon Doador" />
                         <span>Cadastrar Doador</span>
                     </li>
-                    <li title="Editar Doação"
+                    <li key={"Editar Doação"}
+                        title="Editar Doação"
                         name="editar_doacao"
                         className={navMenuLi === "Editar Doação" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Editar Doação")}
@@ -51,7 +54,8 @@ export const HeaderMenu = () => {
                         <img src={DonationImg} alt="Icon Editar Doação" />
                         <span>Editar Doação</span>
                     </li>
-                    <li title="Editar Doador"
+                    <li key={"Editar Doador"}
+                        title="Editar Doador"
                         name="editar_doador"
                         className={navMenuLi === "Editar Doador" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Editar Doador")}
@@ -59,15 +63,17 @@ export const HeaderMenu = () => {
                         <img src={VerifiedUserImg} alt="Icon Editar Doador" />
                         <span>Editar Doador</span>
                     </li>
-                    <li title="Agendar Coleta"
+                    <li key={"Agendar Coleta"}
+                        title="Agendar Coleta"
                         name="agendar_coleta"
                         className={navMenuLi === "Agendar Coleta" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("CAgendar Coleta")}
+                        onClick={() => handlesMenuLiClick("Agendar Coleta")}
                     >
                         <img src={AgendaImg} alt="Icon Agendar coleta" />
                         <span>Agendar Coleta</span>
                     </li>
-                    <li title="Confirmar Coleta"
+                    <li key={"Confirmar Coleta"}
+                        title="Confirmar Coleta"
                         name="confirmar_coleta"
                         className={navMenuLi === "Confirmar Coleta" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Confirmar Coleta")}
@@ -75,7 +81,8 @@ export const HeaderMenu = () => {
                         <img src={ConfirmImg} alt="Icon Confirmar Coleta" />
                         <span>Confirmar Coleta</span>
                     </li>
-                    <li title="Relatório"
+                    <li key={"Relatório"}
+                        title="Relatório"
                         name="gerar_relatorio"
                         className={navMenuLi === "Relatório" ? "active" : ""}
                         onClick={() => handlesMenuLiClick("Relatório")}

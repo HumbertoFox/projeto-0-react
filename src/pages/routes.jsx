@@ -11,9 +11,9 @@ export const AppRouters = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<CadDoacaoPage />} />
-                <Route path="/" element={<CadDoadorPage />} />
                 <Route path="/" element={<ReportPage />} />
+                <Route path="/CadDoacao" element={<CadDoacaoPage />} />
+                <Route path="/CadDoador" element={<CadDoadorPage />} />
             </Routes>
         </BrowserRouter>
     )
