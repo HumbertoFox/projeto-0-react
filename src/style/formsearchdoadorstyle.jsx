@@ -24,12 +24,8 @@ const FormSearch = styled.form`
         border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
         box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);
     }
-
-    div {
-        display: flex;
-        input[type="submit"] {
-            width: 60px;
-        }
+    input[type="submit"] {
+        width: 60px;
     }
 `;
 

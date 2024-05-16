@@ -4,13 +4,11 @@ const FormDoador = styled.form`
     max-width: 290px;
     display: flex;
     flex-direction: column;
+    transition: .3s ease-in-out;
 
     label {
         color: grey;
         padding-left: 5px;
-    }
-    div {
-        display: flex;
     }
     input[type="text"],
     input[type="number"],
@@ -23,6 +21,7 @@ const FormDoador = styled.form`
         padding: 0 5px;
         outline: none;
         margin-bottom: 5px;
+        transition: .3s ease-in-out;
     }
     input[type=text]:focus,
     input[type="number"]:focus,
@@ -40,10 +39,12 @@ const FormDoador = styled.form`
         padding: 5px;
         outline: none;
         margin-bottom: 5px;
+        transition: .3s ease-in-out;
     }
 `;
 
 const DivRadio = styled.div`
+    display: flex;
     padding: 10px 0;
     justify-content: center;
     
@@ -63,6 +64,7 @@ const DivRadio = styled.div`
 `;
 
 const DivBtn = styled.div`
+    display: flex;
     justify-content: space-evenly;
     
     input[type="submit"] {

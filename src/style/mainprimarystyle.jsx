@@ -9,6 +9,9 @@ const MainPrimary = styled.main`
     @media (max-width: 1080px) {
         padding-left: 80px;
     }
+    @media (max-width: 480px) {
+        max-width: 375px;
+    }
 `;
 
 export { MainPrimary };
