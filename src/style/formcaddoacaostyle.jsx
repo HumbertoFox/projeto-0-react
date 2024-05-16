@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormDoacao = styled.form`
-    max-width: 385px;
+    max-width: 790px;
     display: flex;
     flex-direction: column;
     transition: .3s ease-in-out;
@@ -32,6 +32,7 @@ const FormDoacao = styled.form`
         box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);
     }
     textarea {
+        width: 780px;
         height: 70px;
         font-size: 15px;
         border: 1px solid #D2D4DE;
@@ -41,14 +42,28 @@ const FormDoacao = styled.form`
         margin-bottom: 5px;
         transition: .3s ease-in-out;
     }
+    
+    @media (max-width: 860px) {
+        max-width: 390px;
+
+        textarea {
+            width: 385px;
+        }
+    }
     @media (max-width: 480px) {
-        width: 280px;
+        width: 290px;
+
+        textarea {
+            width: 290px;
+        }
     }
 `;
 
 const DivObjPrimary = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    transition: .3s ease-in-out;
 `;
 
 const DivObjsQuant = styled.div`
@@ -74,7 +89,7 @@ const DivObj = styled.div`
         width: 100%;
 
         input[type="text"] {
-            width: 100%;
+            width: 290px;
         }
     }
 `;
