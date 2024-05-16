@@ -1,17 +1,21 @@
 import { FormCadDoacao } from "../components/forms/form_cad_doacao"
 import { FormCadDoador } from "../components/forms/form_cad_doador"
 import { FormSearchDoador } from "../components/forms/form_search_doador"
+import { HeaderMenu } from "../components/header/header"
 import { DivMain } from "../style/caddoacaopagestyle"
-import { MainPrimary } from "../style/mainprimarystyle"
+import { MainPrimary, MainSecondary } from "../style/mainprimarystyle"
 
 export const CadDoacaoPage = () => {
     return (
         <MainPrimary>
-            <DivMain>
-                <FormSearchDoador />
-                <FormCadDoador />
-            </DivMain>
-            <FormCadDoacao />
+            <HeaderMenu />
+            <MainSecondary>
+                <DivMain>
+                    <FormSearchDoador />
+                    <FormCadDoador />
+                </DivMain>
+                <FormCadDoacao />
+            </MainSecondary>
         </MainPrimary>
     )
 }

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const MainReport = styled.main`
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -57,7 +56,7 @@ const DivReport = styled.div`
         color: gray;
         text-shadow: 1px 1px 0.5px #AAF998;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 860px) {
         flex-wrap: wrap;
     }
 `;
