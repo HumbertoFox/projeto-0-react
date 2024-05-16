@@ -43,7 +43,7 @@ const FormDoacao = styled.form`
         transition: .3s ease-in-out;
     }
     
-    @media (max-width: 860px) {
+    @media (max-width: 1340px) {
         max-width: 390px;
 
         textarea {
