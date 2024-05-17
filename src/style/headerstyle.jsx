@@ -21,15 +21,14 @@ const MenuHeader = styled.header`
         flex-direction: column;
         gap: 10px;
     }
-    li {
+    a {
         display: flex;
         align-items: center;
         padding: 10px;
         background-color: #AAF998;
         transition: .3s ease-in-out;
-        cursor: pointer;
     }
-    li:hover {
+    a:hover {
         background-color: #79D1FF;
     }
     nav img {

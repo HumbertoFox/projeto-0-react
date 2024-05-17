@@ -13,13 +13,16 @@ import VerifiedUserImg from "../../assets/usuario-verificado.png";
 import AgendaImg from "../../assets/agenda.png";
 import ConfirmImg from "../../assets/confirmar.png";
 import ReportImg from "../../assets/relatorio.png";
+import { Link } from "react-router-dom";
+var MenuList = "";
 
 export const HeaderMenu = () => {
 
-    const [navMenuLi, SetNavMenuLi] = useState("Relatório");
+    const [navMenuLi, SetNavMenuLi] = useState(MenuList);
 
     const handlesMenuLiClick = (element) => {
         SetNavMenuLi(element);
+        MenuList = element;
     };
 
     return (
@@ -27,68 +30,82 @@ export const HeaderMenu = () => {
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
             <nav>
                 <ul>
-                    <li key={"Cadastrar Doação"}
-                        title="Cadastrar Doação"
+                    <li title="Cadastrar Doação"
                         name="cadastro_doacao"
-                        className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Cadastrar Doação")}
                     >
-                        <img src={ClothesImg} alt="Icon Doação" />
-                        <span>Cadastrar Doação</span>
+                        <Link to={"/CadDoacao"}
+                            className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Cadastrar Doação")}
+                        >
+                            <img src={ClothesImg} alt="Icon Doação" />
+                            <span>Cadastrar Doação</span>
+                        </Link>
                     </li>
-                    <li key={"Cadastrar Doador"}
-                        title="Cadastrar Doador"
+                    <li title="Cadastrar Doador"
                         name="cadastro_doador"
-                        className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Cadastrar Doador")}
                     >
-                        <img src={UserImg} alt="Icon Doador" />
-                        <span>Cadastrar Doador</span>
+                        <Link to={"/CadDoador"}
+                            className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Cadastrar Doador")}
+                        >
+                            <img src={UserImg} alt="Icon Doador" />
+                            <span>Cadastrar Doador</span>
+                        </Link>
                     </li>
-                    <li key={"Editar Doação"}
-                        title="Editar Doação"
+                    <li title="Editar Doação"
                         name="editar_doacao"
-                        className={navMenuLi === "Editar Doação" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Editar Doação")}
                     >
-                        <img src={DonationImg} alt="Icon Editar Doação" />
-                        <span>Editar Doação</span>
+                        <Link to={"/"}
+                            className={navMenuLi === "Editar Doação" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Editar Doação")}
+                        >
+                            <img src={DonationImg} alt="Icon Editar Doação" />
+                            <span>Editar Doação</span>
+                        </Link>
                     </li>
-                    <li key={"Editar Doador"}
-                        title="Editar Doador"
+                    <li title="Editar Doador"
                         name="editar_doador"
-                        className={navMenuLi === "Editar Doador" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Editar Doador")}
                     >
-                        <img src={VerifiedUserImg} alt="Icon Editar Doador" />
-                        <span>Editar Doador</span>
+                        <Link to={"/"}
+                            className={navMenuLi === "Editar Doador" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Editar Doador")}
+                        >
+                            <img src={VerifiedUserImg} alt="Icon Editar Doador" />
+                            <span>Editar Doador</span>
+                        </Link>
                     </li>
-                    <li key={"Agendar Coleta"}
-                        title="Agendar Coleta"
+                    <li title="Agendar Coleta"
                         name="agendar_coleta"
-                        className={navMenuLi === "Agendar Coleta" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Agendar Coleta")}
                     >
-                        <img src={AgendaImg} alt="Icon Agendar coleta" />
-                        <span>Agendar Coleta</span>
+                        <Link to={"/"}
+                            className={navMenuLi === "Agendar Coleta" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Agendar Coleta")}
+                        >
+                            <img src={AgendaImg} alt="Icon Agendar coleta" />
+                            <span>Agendar Coleta</span>
+                        </Link>
                     </li>
-                    <li key={"Confirmar Coleta"}
-                        title="Confirmar Coleta"
+                    <li title="Confirmar Coleta"
                         name="confirmar_coleta"
-                        className={navMenuLi === "Confirmar Coleta" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Confirmar Coleta")}
                     >
-                        <img src={ConfirmImg} alt="Icon Confirmar Coleta" />
-                        <span>Confirmar Coleta</span>
+                        <Link to={"/"}
+                            className={navMenuLi === "Confirmar Coleta" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Confirmar Coleta")}
+                        >
+                            <img src={ConfirmImg} alt="Icon Confirmar Coleta" />
+                            <span>Confirmar Coleta</span>
+                        </Link>
                     </li>
-                    <li key={"Relatório"}
-                        title="Relatório"
+                    <li title="Relatório"
                         name="gerar_relatorio"
-                        className={navMenuLi === "Relatório" ? "active" : ""}
-                        onClick={() => handlesMenuLiClick("Relatório")}
                     >
-                        <img src={ReportImg} alt="Icon Relatório" />
-                        <span>Gerar Relatório</span>
+                        <Link to={"/"}
+                            className={navMenuLi === "Relatório" ? "active" : ""}
+                            onClick={() => handlesMenuLiClick("Relatório")}
+                        >
+                            <img src={ReportImg} alt="Icon Relatório" />
+                            <span>Gerar Relatório</span>
+                        </Link>
                     </li>
                 </ul>
             </nav>
