@@ -6,6 +6,10 @@ export const FormCadDoacao = (props) => {
         <FormDoacao method="POST" action="">
             <fieldset disabled={props.text}>
                 <legend>Lista de objetos a serem doados</legend>
+                <DivObj>
+                    <label htmlFor="codigodoacao">Código da Doação</label>
+                    <input type="text" name="codigodoacao" id="codigodoacao" />
+                </DivObj>
                 <DivObjPrimary>
                     <DivObjsQuant>
                         <DivObj>

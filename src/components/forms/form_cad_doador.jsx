@@ -12,6 +12,8 @@ export const FormCadDoador = (props) => {
     return (
         <FormDoador method="POST" action="">
             <fieldset disabled={props.text}>
+                <label htmlFor="codigodoador">Código do Doador</label>
+                <input type="text" name="codigodoador" id="codigodoador" disabled={true}/>
                 <label htmlFor="nome">Nome do Doador</label>
                 <input type="text" name="nome" id="nome" />
                 <label htmlFor="contato1">Número Móvel do Responsável</label>

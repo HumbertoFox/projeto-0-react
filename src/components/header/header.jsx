@@ -33,7 +33,7 @@ export const HeaderMenu = () => {
                     <li title="Cadastrar Doação"
                         name="cadastro_doacao"
                     >
-                        <Link to={"/CadDoacao"}
+                        <Link to={"/cadastrar-doacao"}
                             className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Cadastrar Doação")}
                         >
@@ -44,7 +44,7 @@ export const HeaderMenu = () => {
                     <li title="Cadastrar Doador"
                         name="cadastro_doador"
                     >
-                        <Link to={"/CadDoador"}
+                        <Link to={"/cadastrar-doador"}
                             className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Cadastrar Doador")}
                         >
@@ -55,7 +55,7 @@ export const HeaderMenu = () => {
                     <li title="Editar Doação"
                         name="editar_doacao"
                     >
-                        <Link to={"/EditDoacao"}
+                        <Link to={"/editar-doacao"}
                             className={navMenuLi === "Editar Doação" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Editar Doação")}
                         >
@@ -66,7 +66,7 @@ export const HeaderMenu = () => {
                     <li title="Editar Doador"
                         name="editar_doador"
                     >
-                        <Link to={"/EditDoador"}
+                        <Link to={"/editar-doador"}
                             className={navMenuLi === "Editar Doador" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Editar Doador")}
                         >
