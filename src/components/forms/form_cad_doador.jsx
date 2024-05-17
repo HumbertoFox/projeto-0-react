@@ -1,7 +1,14 @@
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { DivBtn, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
+import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 
 export const FormCadDoador = (props) => {
+
+    const [radioSelect, setRadioSelect] = useState("");
+
+    const trocarRadioSelect = e => {
+        setRadioSelect(e.target.value);
+    }
 
     const {
         register,
@@ -13,7 +20,7 @@ export const FormCadDoador = (props) => {
         <FormDoador method="POST" action="">
             <fieldset disabled={props.text}>
                 <label htmlFor="codigodoador">Código do Doador</label>
-                <input type="text" name="codigodoador" id="codigodoador" disabled={true}/>
+                <input type="text" name="codigodoador" id="codigodoador" disabled={true} />
                 <label htmlFor="nome">Nome do Doador</label>
                 <input type="text" name="nome" id="nome" />
                 <label htmlFor="contato1">Número Móvel do Responsável</label>
@@ -29,21 +36,40 @@ export const FormCadDoador = (props) => {
                 <label htmlFor="nunresidencia">Número da Casa/Edifício/Empresa</label>
                 <input type="text" name="nunresidencia" id="nunresidencia" />
                 <DivRadio>
-                    <input type="radio" name="tiporesidencia" id="casa" value="casa" />
+                    <input type="radio"
+                        id="casa"
+                        value="casa"
+                        checked={radioSelect === "casa" ? true : false}
+                        onChange={trocarRadioSelect}
+                    />
                     <label htmlFor="casa">Casa</label>
-                    <input type="radio" name="tiporesidencia" id="edificio" value="edificio" />
+                    <input type="radio"
+                        id="edificio"
+                        value="edificio"
+                        checked={radioSelect === "edificio" ? true : false}
+                        onChange={trocarRadioSelect}
+                    />
                     <label htmlFor="edificio">Edifício</label>
-                    <input type="radio" name="tiporesidencia" id="empresa" value="empresa" />
+                    <input type="radio"
+                        id="empresa"
+                        value="empresa"
+                        checked={radioSelect === "empresa" ? true : false}
+                        onChange={trocarRadioSelect}
+                    />
                     <label htmlFor="empresa">Empresa</label>
                 </DivRadio>
-                <label htmlFor="cnpj">Cnpj</label>
-                <input type="number" name="cnpj" id="cnpj" />
-                <label htmlFor="predio">Nome do Edifício/Empresa</label>
-                <input type="text" name="predio" id="predio" />
-                <label htmlFor="bloco">Bloco</label>
-                <input type="text" name="bloco" id="bloco" />
-                <label htmlFor="salaap">Apartamento/Sala</label>
-                <input type="text" name="salaap" id="salaap" />
+                <DivCnpj className={radioSelect}>
+                    <label htmlFor="cnpj">Cnpj</label>
+                    <input type="number" name="cnpj" id="cnpj" />
+                </DivCnpj>
+                <DivNomeEdEmp className={radioSelect}>
+                    <label htmlFor="predio">Nome do Edifício/Empresa</label>
+                    <input type="text" name="predio" id="predio" />
+                    <label htmlFor="bloco">Bloco</label>
+                    <input type="text" name="bloco" id="bloco" />
+                    <label htmlFor="salaap">Apartamento/Sala</label>
+                    <input type="text" name="salaap" id="salaap" />
+                </DivNomeEdEmp>
                 <label htmlFor="pontoref">Ponto de Referência</label>
                 <textarea name="pontoref" id="pontoref"></textarea>
                 <label htmlFor="bairro">Bairro/Distrito</label>

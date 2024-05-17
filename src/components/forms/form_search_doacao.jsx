@@ -1,5 +1,6 @@
-import { DivBtn } from "../../style/formcaddoadorstyle"
-import { FormSearchDoa } from "../../style/formsearchdoadorstyle"
+import React from "react";
+import { DivBtn } from "../../style/formcaddoadorstyle";
+import { FormSearchDoa } from "../../style/formsearchdoadorstyle";
 
 export const FormSearchDoacao = () => {
     return (

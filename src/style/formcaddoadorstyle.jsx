@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const FormDoador = styled.form`
     max-width: 290px;
@@ -62,6 +62,30 @@ const DivRadio = styled.div`
     }
 `;
 
+const DivCnpj = styled.div`
+    display: block;
+
+${({ className }) => {
+        if (className === "casa" || className === "edificio") {
+            return css`
+            display: none;
+        `;
+        };
+    }};
+`;
+
+const DivNomeEdEmp = styled.div`
+    display: block;
+
+${({ className }) => {
+        if (className === "casa") {
+            return css`
+            display: none;
+        `;
+        };
+    }};
+`;
+
 const DivBtn = styled.div`
     display: flex;
     justify-content: space-evenly;
@@ -83,4 +107,4 @@ const DivBtn = styled.div`
     }
 `;
 
-export { FormDoador, DivRadio, DivBtn };
+export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivBtn };

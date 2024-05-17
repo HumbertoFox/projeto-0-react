@@ -1,5 +1,6 @@
-import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle"
-import { DivBtn } from "../../style/formcaddoadorstyle"
+import React from "react";
+import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle";
+import { DivBtn } from "../../style/formcaddoadorstyle";
 
 export const FormCadDoacao = (props) => {
     return (
