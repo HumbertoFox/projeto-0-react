@@ -1,5 +1,5 @@
 import { HeaderMenu } from "../components/header/header";
-import { MainPrimary, MainSecondary } from "../style/mainprimarystyle";
+import { MainPrimary, MainSecondary } from "../style/mainpagestyle";
 import { DivReport, MainReport, SectionCollection } from "../style/reportstyle"
 const diaDaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
 const dataFull = new Date();
