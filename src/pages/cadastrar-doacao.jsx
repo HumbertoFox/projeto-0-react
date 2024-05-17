@@ -12,7 +12,7 @@ export const CadDoacaoPage = () => {
             <MainSecondary>
                 <DivMain>
                     <FormSearchDoador />
-                    <FormCadDoador />
+                    <FormCadDoador text="disabled"/>
                 </DivMain>
                 <FormCadDoacao />
             </MainSecondary>

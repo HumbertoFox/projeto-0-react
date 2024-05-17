@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { DivBtn, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 
-export const FormCadDoador = () => {
+export const FormCadDoador = (props) => {
 
     const {
         register,
@@ -11,7 +11,7 @@ export const FormCadDoador = () => {
 
     return (
         <FormDoador method="POST" action="">
-            <fieldset>
+            <fieldset disabled={props.text}>
                 <label htmlFor="nome">Nome do Doador</label>
                 <input type="text" name="nome" id="nome" />
                 <label htmlFor="contato1">Número Móvel do Responsável</label>

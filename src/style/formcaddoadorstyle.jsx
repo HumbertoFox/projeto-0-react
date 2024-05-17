@@ -54,7 +54,6 @@ const DivRadio = styled.div`
         transition: .3s ease-in-out;
     }
     label {
-        padding-left: 0;
         padding-right: 15px;
     }
     label:hover,
