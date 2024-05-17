@@ -1,5 +1,5 @@
 import { HeaderMenu } from "../components/header/header";
-import { MainPrimary } from "../style/mainprimarystyle";
+import { MainPrimary, MainSecondary } from "../style/mainprimarystyle";
 import { DivReport, MainReport, SectionCollection } from "../style/reportstyle"
 const diaDaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
 const dataFull = new Date();
@@ -29,27 +29,29 @@ export const ReportPage = () => {
     return (
         <MainPrimary>
             <HeaderMenu />
-            <MainReport>
-                <SectionCollection>
-                    <h1>Relatório de Coleta</h1>
-                    <div>
+            <MainSecondary>
+                <MainReport>
+                    <SectionCollection>
+                        <h1>Relatório de Coleta</h1>
+                        <div>
+                            <section>
+                                <h2>Última Semana</h2>
+                            </section>
+                            <section>
+                                <h2>Último Mês</h2>
+                            </section>
+                        </div>
+                    </SectionCollection>
+                    <DivReport>
                         <section>
-                            <h2>Última Semana</h2>
+                            <h2>Lista de Fichas Agendadas para Coleta hoje <strong>{diaNaSemana}</strong> dia <strong>{dataFull.getDate()}</strong></h2>
                         </section>
                         <section>
-                            <h2>Último Mês</h2>
+                            <h2>Lista de Fichas Coletadas/não Coletadas dia anterior <strong>{fichaDoSabado()}</strong> dia <strong >{diaDoMesDown()}</strong></h2>
                         </section>
-                    </div>
-                </SectionCollection>
-                <DivReport>
-                    <section>
-                        <h2>Lista de Fichas Agendadas para Coleta hoje <strong>{diaNaSemana}</strong> dia <strong>{dataFull.getDate()}</strong></h2>
-                    </section>
-                    <section>
-                        <h2>Lista de Fichas Coletadas/não Coletadas dia anterior <strong>{fichaDoSabado()}</strong> dia <strong >{diaDoMesDown()}</strong></h2>
-                    </section>
-                </DivReport>
-            </MainReport>
+                    </DivReport>
+                </MainReport>
+            </MainSecondary>
         </MainPrimary >
     )
 }

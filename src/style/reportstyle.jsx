@@ -5,12 +5,7 @@ const MainReport = styled.main`
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: 10px;
-    padding-left: 255px;
     transition: .3s ease-in-out;
-    @media (max-width: 1080px) {
-        padding-left: 80px;
-    }
 `;
 
 const SectionCollection = styled.section`
