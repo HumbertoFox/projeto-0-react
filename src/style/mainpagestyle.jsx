@@ -8,15 +8,17 @@ const MainPrimary = styled.main`
 `;
 
 const MainSecondary = styled.main`
-    width: 100%;
+    position: relative;
+    width: calc(100% - 250px);
+    left: 250px;
     min-height: 100vh;
     display: flex;
     column-gap: 10px;
-    padding: 10px 0;
-    padding-left: 255px;
+    padding: 10px 5px;
     transition: .3s ease-in-out;
     @media (max-width: 1080px) {
-        padding-left: 80px;
+        width: calc(100% - 75px);
+        left: 75px;
     }
     @media (max-width: 770px) {
         flex-wrap: wrap;
