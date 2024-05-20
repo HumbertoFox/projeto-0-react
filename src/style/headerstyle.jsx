@@ -58,8 +58,9 @@ const ImgEnterprise = styled.img`
     background: none;
     margin: 0 auto;
     transition: .3s ease-in-out;
-    @media (max-width: 1080px) {
-        width: 100%;
+    @media screen and (max-width: 1080px),
+    screen and (max-height: 620px) {
+        width: 100px;
     }
 `;
 
