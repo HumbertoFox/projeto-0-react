@@ -7,7 +7,7 @@ const MainPrimary = styled.main`
     transition: .3s ease-in-out;
 `;
 
-const MainSecondary = styled.main`
+const MainSecondary = styled.div`
     position: relative;
     width: calc(100% - 250px);
     left: 250px;

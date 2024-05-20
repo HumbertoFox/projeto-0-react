@@ -42,7 +42,6 @@ const MenuHeader = styled.header`
     span {
         font-size: 18px;
         background: none;
-        transition: .3s ease-in-out;
     }
     @media (max-width: 1080px) {
         width: 75px;
@@ -55,13 +54,12 @@ const MenuHeader = styled.header`
 
 const ImgEnterprise = styled.img`
     display: flex;
-    width: 100px;
+    width: 190px;
     background: none;
-    padding: 20px 0;
     margin: 0 auto;
     transition: .3s ease-in-out;
     @media (max-width: 1080px) {
-        width: 50px;
+        width: 100%;
     }
 `;
 

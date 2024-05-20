@@ -5,7 +5,7 @@ import {
     MenuHeader,
     ImgEnterprise
 } from "../../style/headerstyle";
-import EnterpriseImg from "../../assets/dinheiro.png";
+import EnterpriseImg from "../../assets/LOGO BFN - INTER.png";
 import ClothesImg from "../../assets/doacao-de-roupas.png";
 import UserImg from "../../assets/novo-usuario.png";
 import DonationImg from "../../assets/doacao.png";
