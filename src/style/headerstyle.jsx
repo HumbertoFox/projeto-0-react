@@ -60,7 +60,7 @@ const ImgEnterprise = styled.img`
     transition: .3s ease-in-out;
     @media screen and (max-width: 1080px),
     screen and (max-height: 620px) {
-        width: 100px;
+        width: 100%;
     }
 `;
 
