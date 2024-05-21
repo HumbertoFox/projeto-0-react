@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
+import { SubmitButton } from "../button/button_submit";
 
 export const FormCadDoador = (props) => {
 
@@ -20,21 +21,21 @@ export const FormCadDoador = (props) => {
         <FormDoador method="POST" action="">
             <fieldset disabled={props.text}>
                 <label htmlFor="codigodoador">Código do Doador</label>
-                <input type="text" name="codigodoador" id="codigodoador" disabled={true} />
+                <input type="text" id="codigodoador" disabled={true} />
                 <label htmlFor="nome">Nome do Doador</label>
-                <input type="text" name="nome" id="nome" />
+                <input type="text" id="nome" />
                 <label htmlFor="contato1">Número Móvel do Responsável</label>
-                <input type="tel" name="contato1" id="contato1" />
+                <input type="tel" id="contato1" />
                 <label htmlFor="contato2">Número Móvel do Responsável/Opcional</label>
-                <input type="tel" name="contato2" id="contato2" />
+                <input type="tel" id="contato2" />
                 <label htmlFor="contato3">Número Fixo do Contato/Opcional ou Ramal</label>
-                <input type="tel" name="contato3" id="contato3" />
+                <input type="tel" id="contato3" />
                 <label htmlFor="cep">Cep</label>
-                <input type="number" name="cep" id="cep" />
+                <input type="number" id="cep" />
                 <label htmlFor="rua">Logradouro: Av/Travessa/Rua</label>
-                <input type="text" name="rua" id="rua" />
+                <input type="text" id="rua" />
                 <label htmlFor="nunresidencia">Número da Casa/Edifício/Empresa</label>
-                <input type="text" name="nunresidencia" id="nunresidencia" />
+                <input type="text" id="nunresidencia" />
                 <DivRadio>
                     <input type="radio"
                         id="casa"
@@ -60,26 +61,26 @@ export const FormCadDoador = (props) => {
                 </DivRadio>
                 <DivCnpj className={radioSelect}>
                     <label htmlFor="cnpj">Cnpj</label>
-                    <input type="number" name="cnpj" id="cnpj" />
+                    <input type="number" id="cnpj" />
                 </DivCnpj>
                 <DivNomeEdEmp className={radioSelect}>
                     <label htmlFor="predio">Nome do Edifício/Empresa</label>
-                    <input type="text" name="predio" id="predio" />
+                    <input type="text" id="predio" />
                     <label htmlFor="bloco">Bloco</label>
-                    <input type="text" name="bloco" id="bloco" />
+                    <input type="text" id="bloco" />
                     <label htmlFor="salaap">Apartamento/Sala</label>
-                    <input type="text" name="salaap" id="salaap" />
+                    <input type="text" id="salaap" />
                 </DivNomeEdEmp>
                 <label htmlFor="pontoref">Ponto de Referência</label>
-                <textarea name="pontoref" id="pontoref"></textarea>
+                <textarea id="pontoref"></textarea>
                 <label htmlFor="bairro">Bairro/Distrito</label>
-                <input type="text" name="bairro" id="bairro" />
+                <input type="text" id="bairro" />
                 <label htmlFor="cidade">Cidade</label>
-                <input type="text" name="cidade" id="cidade" />
+                <input type="text" id="cidade" />
             </fieldset>
             <DivBtn>
-                <input type="submit" title="Cadastrar Doador e ir para Cadastrar Doação" name="cadastrar_doacao" id="cadastrar_doacao" value={"Cad Doador/Doação"} />
-                <input type="submit" title="Cadastrar Doador" name="cadastrar_doador" id="cadastrar_doador" value={"Cadastrar Doador"} />
+                <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />
+                <SubmitButton title="Cadastrar Doador" id="cadastrar_doador" value="Cadastrar Doador" />
             </DivBtn>
         </FormDoador>
     )

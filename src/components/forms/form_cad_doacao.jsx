@@ -1,6 +1,7 @@
 import React from "react";
 import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle";
 import { DivBtn } from "../../style/formcaddoadorstyle";
+import { SubmitButton } from "../button/button_submit";
 
 export const FormCadDoacao = (props) => {
     return (
@@ -157,8 +158,8 @@ export const FormCadDoacao = (props) => {
                 <textarea name="obs" id="obs"></textarea>
             </fieldset>
             <DivBtn>
-                <input type="submit" name="cadastrar_doacao" value={"Cadastrar Doação"} />
-                <input type="submit" name="cadastrar_agendar" value={"Cadastrar e agendar"} />
+                <SubmitButton value="Cadastrar Doação" />
+                <SubmitButton value="Cadastrar e agendar" />
             </DivBtn>
         </FormDoacao>
     )

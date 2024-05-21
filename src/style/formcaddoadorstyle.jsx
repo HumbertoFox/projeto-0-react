@@ -89,22 +89,6 @@ ${({ className }) => {
 const DivBtn = styled.div`
     display: flex;
     justify-content: space-evenly;
-    
-    input[type="submit"] {
-        width: 130px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        background-color: #AAF998;
-        border-radius: 5px;
-        text-shadow: 1px 1px 0.5px #79D1FF;
-        cursor: pointer;
-        transition: .3s ease-in-out;
-    }
-    input[type="submit"]:hover {
-        background-color: #79D1FF;
-        text-shadow: 1px 1px 0.5px #AAF998;
-    }
 `;
 
 export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivBtn };
