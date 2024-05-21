@@ -18,8 +18,8 @@ export const FormSearchDoacao = () => {
 
     return (
         <FormSearch method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="codnometel">Pesquisar por Código da Doação</label>
-            <input type="search" id="codigodoacao" />
+            <label htmlFor="coddonation">Pesquisar por Código da Doação</label>
+            <input type="search" id="coddonation" {...register("coddonation")} />
             <DivBtn>
                 <SubmitButton value="Pesquisar" />
             </DivBtn>

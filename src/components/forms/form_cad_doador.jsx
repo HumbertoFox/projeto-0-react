@@ -24,22 +24,22 @@ export const FormCadDoador = (props) => {
     return (
         <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={props.text}>
-                <label htmlFor="codigodoador">Código do Doador</label>
-                <input type="text" id="codigodoador" disabled={true} />
-                <label htmlFor="nome">Nome do Doador</label>
-                <input type="text" id="nome" />
-                <label htmlFor="contato1">Número Móvel do Responsável</label>
-                <input type="tel" id="contato1" />
-                <label htmlFor="contato2">Número Móvel do Responsável/Opcional</label>
-                <input type="tel" id="contato2" />
-                <label htmlFor="contato3">Número Fixo do Contato/Opcional ou Ramal</label>
-                <input type="tel" id="contato3" />
+                <label htmlFor="donorcode">Código do Doador</label>
+                <input type="text" id="donorcode" disabled={true} />
+                <label htmlFor="name">Nome do Doador</label>
+                <input type="text" id="name" />
+                <label htmlFor="contact1">Número Móvel do Responsável</label>
+                <input type="tel" id="contact1" />
+                <label htmlFor="contact2">Número Móvel do Responsável/Opcional</label>
+                <input type="tel" id="contact2" />
+                <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
+                <input type="tel" id="contact3" />
                 <label htmlFor="cep">Cep</label>
                 <input type="number" id="cep" />
-                <label htmlFor="rua">Logradouro: Av/Travessa/Rua</label>
-                <input type="text" id="rua" />
-                <label htmlFor="nunresidencia">Número da Casa/Edifício/Empresa</label>
-                <input type="text" id="nunresidencia" />
+                <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
+                <input type="text" id="street" />
+                <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
+                <input type="text" id="nunresidence" />
                 <DivRadio>
                     <input type="radio"
                         id="casa"
@@ -68,19 +68,19 @@ export const FormCadDoador = (props) => {
                     <input type="number" id="cnpj" />
                 </DivCnpj>
                 <DivNomeEdEmp className={radioSelect}>
-                    <label htmlFor="predio">Nome do Edifício/Empresa</label>
-                    <input type="text" id="predio" />
-                    <label htmlFor="bloco">Bloco</label>
-                    <input type="text" id="bloco" />
-                    <label htmlFor="salaap">Apartamento/Sala</label>
-                    <input type="text" id="salaap" />
+                    <label htmlFor="building">Nome do Edifício/Empresa</label>
+                    <input type="text" id="building" />
+                    <label htmlFor="block">Bloco</label>
+                    <input type="text" id="block" />
+                    <label htmlFor="livingapartmentroom">Apartamento/Sala</label>
+                    <input type="text" id="livingapartmentroom" />
                 </DivNomeEdEmp>
-                <label htmlFor="pontoref">Ponto de Referência</label>
-                <textarea id="pontoref"></textarea>
-                <label htmlFor="bairro">Bairro/Distrito</label>
-                <input type="text" id="bairro" />
-                <label htmlFor="cidade">Cidade</label>
-                <input type="text" id="cidade" />
+                <label htmlFor="Referencepoint">Ponto de Referência</label>
+                <textarea id="Reference point"></textarea>
+                <label htmlFor="neighborhood">Bairro/Distrito</label>
+                <input type="text" id="neighborhood" />
+                <label htmlFor="city">Cidade</label>
+                <input type="text" id="city" />
             </fieldset>
             <DivBtn>
                 <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />
