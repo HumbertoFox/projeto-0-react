@@ -16,9 +16,13 @@ export const FormCadDoador = (props) => {
         handleSubmit,
         formState: { errors }
     } = useForm();
+    
+    const onSubmit = e => {
+        console.log(e);
+    }
 
     return (
-        <FormDoador method="POST" action="">
+        <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={props.text}>
                 <label htmlFor="codigodoador">Código do Doador</label>
                 <input type="text" id="codigodoador" disabled={true} />

@@ -1,11 +1,23 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle";
 import { DivBtn } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
 
 export const FormCadDoacao = (props) => {
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
+
+    const onSubmit = e => {
+        console.log(e);
+    }
+
     return (
-        <FormDoacao method="POST" action="">
+        <FormDoacao method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={props.text}>
                 <legend>Lista de objetos a serem doados</legend>
                 <DivObj>
