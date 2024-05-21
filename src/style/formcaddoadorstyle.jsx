@@ -66,7 +66,7 @@ const DivCnpj = styled.div`
     display: block;
 
 ${({ className }) => {
-        if (className === "casa" || className === "edificio") {
+        if (className === "house" || className === "building") {
             return css`
             display: none;
         `;
@@ -78,7 +78,7 @@ const DivNomeEdEmp = styled.div`
     display: block;
 
 ${({ className }) => {
-        if (className === "casa") {
+        if (className === "house") {
             return css`
             display: none;
         `;

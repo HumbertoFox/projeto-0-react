@@ -1,11 +1,40 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
+import { viaCepApi } from "../../services/viacep";
+import {
+    DivBtn,
+    DivCnpj,
+    DivNomeEdEmp,
+    DivRadio,
+    FormDoador
+} from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
 
 export const FormCadDoador = (props) => {
 
     const [radioSelect, setRadioSelect] = useState("");
+
+    const checkedCep = async (e) => {
+        if (!e.target.value) {
+            setFocus('contact3');
+            alert("O campo CEP está vazio!");
+            return;
+        };
+        const cep = e.target.value;
+        try {
+            const response = await viaCepApi.get(`${cep}/json/`)
+            const data = await response.data;
+            setValue('street', data.logradouro);
+            setValue('neighborhood', data.bairro);
+            setValue('city', data.localidade);
+            setFocus('nunresidence');
+        } catch (error) {
+            console.log("ERROR" + error);
+            alert("CEP não encontrado! Verifique os números digitado");
+            setFocus('contact3');
+            return;
+        }
+    };
 
     const trocarRadioSelect = e => {
         setRadioSelect(e.target.value);
@@ -14,9 +43,11 @@ export const FormCadDoador = (props) => {
     const {
         register,
         handleSubmit,
+        setValue,
+        setFocus,
         formState: { errors }
     } = useForm();
-    
+
     const onSubmit = e => {
         console.log(e);
     }
@@ -27,60 +58,60 @@ export const FormCadDoador = (props) => {
                 <label htmlFor="donorcode">Código do Doador</label>
                 <input type="text" id="donorcode" disabled={true} />
                 <label htmlFor="name">Nome do Doador</label>
-                <input type="text" id="name" />
+                <input type="text" id="name" {...register("name")} />
                 <label htmlFor="contact1">Número Móvel do Responsável</label>
-                <input type="tel" id="contact1" />
+                <input type="tel" id="contact1" {...register("contact1")} />
                 <label htmlFor="contact2">Número Móvel do Responsável/Opcional</label>
-                <input type="tel" id="contact2" />
+                <input type="tel" id="contact2" {...register("contact2")} />
                 <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
-                <input type="tel" id="contact3" />
+                <input type="tel" id="contact3" {...register("contact3")} />
                 <label htmlFor="cep">Cep</label>
-                <input type="number" id="cep" />
+                <input type="number" id="cep" {...register("cep")} onBlur={checkedCep} />
                 <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
-                <input type="text" id="street" />
+                <input type="text" id="street" {...register("street")} />
                 <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
-                <input type="text" id="nunresidence" />
+                <input type="text" id="nunresidence" {...register("nunresidence")} />
                 <DivRadio>
                     <input type="radio"
-                        id="casa"
-                        value="casa"
-                        checked={radioSelect === "casa" ? true : false}
+                        id="house"
+                        value="house"
+                        checked={radioSelect === "house" ? true : false}
                         onChange={trocarRadioSelect}
                     />
-                    <label htmlFor="casa">Casa</label>
+                    <label htmlFor="house">Casa</label>
                     <input type="radio"
-                        id="edificio"
-                        value="edificio"
-                        checked={radioSelect === "edificio" ? true : false}
+                        id="building"
+                        value="building"
+                        checked={radioSelect === "building" ? true : false}
                         onChange={trocarRadioSelect}
                     />
-                    <label htmlFor="edificio">Edifício</label>
+                    <label htmlFor="building">Edifício</label>
                     <input type="radio"
-                        id="empresa"
-                        value="empresa"
-                        checked={radioSelect === "empresa" ? true : false}
+                        id="enterprise"
+                        value="enterprise"
+                        checked={radioSelect === "enterprise" ? true : false}
                         onChange={trocarRadioSelect}
                     />
-                    <label htmlFor="empresa">Empresa</label>
+                    <label htmlFor="enterprise">Empresa</label>
                 </DivRadio>
                 <DivCnpj className={radioSelect}>
                     <label htmlFor="cnpj">Cnpj</label>
-                    <input type="number" id="cnpj" />
+                    <input type="number" id="cnpj" {...register("cnpj")} />
                 </DivCnpj>
                 <DivNomeEdEmp className={radioSelect}>
                     <label htmlFor="building">Nome do Edifício/Empresa</label>
-                    <input type="text" id="building" />
+                    <input type="text" id="building" {...register("building")} />
                     <label htmlFor="block">Bloco</label>
-                    <input type="text" id="block" />
+                    <input type="text" id="block" {...register("block")} />
                     <label htmlFor="livingapartmentroom">Apartamento/Sala</label>
-                    <input type="text" id="livingapartmentroom" />
+                    <input type="text" id="livingapartmentroom" {...register("livingapartmentroom")} />
                 </DivNomeEdEmp>
-                <label htmlFor="Referencepoint">Ponto de Referência</label>
-                <textarea id="Reference point"></textarea>
+                <label htmlFor="referencepoint">Ponto de Referência</label>
+                <textarea id="referencepoint" {...register("referencepoint")} ></textarea>
                 <label htmlFor="neighborhood">Bairro/Distrito</label>
-                <input type="text" id="neighborhood" />
+                <input type="text" id="neighborhood" {...register("neighborhood")} />
                 <label htmlFor="city">Cidade</label>
-                <input type="text" id="city" />
+                <input type="text" id="city" {...register("city")} />
             </fieldset>
             <DivBtn>
                 <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />
