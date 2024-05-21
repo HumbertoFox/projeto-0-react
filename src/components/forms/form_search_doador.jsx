@@ -1,6 +1,6 @@
 import React from "react";
 import { DivBtn } from "../../style/formcaddoadorstyle";
-import { FormSearch } from "../../style/formsearchdoadorstyle";
+import { FormSearch } from "../../style/formsearchstyle";
 import { SubmitButton } from "../button/button_submit";
 
 export const FormSearchDoador = () => {
