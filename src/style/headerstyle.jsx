@@ -10,6 +10,7 @@ const MenuHeader = styled.header`
     border-right: solid 3px #79D1FF;
     background-color: #AAF998;
     transition: .3s ease-in-out;
+    overflow-x: hidden;
 
     nav,
     ul {
