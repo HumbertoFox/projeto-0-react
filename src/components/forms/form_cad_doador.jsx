@@ -14,24 +14,49 @@ export const FormCadDoador = (props) => {
 
     const [radioSelect, setRadioSelect] = useState("");
 
-    const checkedCep = async (e) => {
+    const checkedZipCode = async (e) => {
+
+        const clearZipCode = () => {
+            setValue('zipcode', "");
+            setValue('street', "");
+            setValue('neighborhood', "");
+            setValue('city', "");
+        };
+
         if (!e.target.value) {
+            clearZipCode();
             setFocus('contact3');
-            alert("O campo CEP está vazio!");
+            alert("Formato de CEP inválido.");
             return;
         };
-        const cep = e.target.value;
+
+        const zipcode = e.target.value.replace(/\D/g, '');
+        var validazipcode = /^[0-9]{8}$/;
+
         try {
-            const response = await viaCepApi.get(`${cep}/json/`)
-            const data = await response.data;
-            setValue('street', data.logradouro);
-            setValue('neighborhood', data.bairro);
-            setValue('city', data.localidade);
-            setFocus('nunresidence');
+            if (validazipcode.test(zipcode)) {
+                const data = await viaCepApi.get(`${zipcode}/json/`)
+                    .then(res => res.data);
+                if (data && !data.erro) {
+                    setValue('street', data.logradouro);
+                    setValue('neighborhood', data.bairro);
+                    setValue('city', data.localidade);
+                    setFocus('nunresidence');
+                } else {
+                    clearZipCode();
+                    setFocus('contact3');
+                    alert("CEP não encontrado.");
+                }
+            } else {
+                clearZipCode();
+                setFocus('contact3');
+                alert("Formato de CEP inválido.");
+            }
         } catch (error) {
-            console.log("ERROR" + error);
-            alert("CEP não encontrado! Verifique os números digitado");
+            console.error(error);
+            clearZipCode();
             setFocus('contact3');
+            alert(`Formato de CEP inválido ou não encontrado.`);
             return;
         }
     };
@@ -65,8 +90,8 @@ export const FormCadDoador = (props) => {
                 <input type="tel" id="contact2" {...register("contact2")} />
                 <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
                 <input type="tel" id="contact3" {...register("contact3")} />
-                <label htmlFor="cep">Cep</label>
-                <input type="number" id="cep" {...register("cep")} onBlur={checkedCep} />
+                <label htmlFor="zipcode">Cep</label>
+                <input type="number" id="zipcode" {...register("zipcode")} onBlur={checkedZipCode} />
                 <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
                 <input type="text" id="street" {...register("street")} />
                 <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
