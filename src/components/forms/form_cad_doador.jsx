@@ -9,6 +9,7 @@ import {
     FormDoador
 } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
+import { Legend } from "../legend/legend_component";
 
 export const FormCadDoador = (props) => {
 
@@ -80,6 +81,7 @@ export const FormCadDoador = (props) => {
     return (
         <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={props.text}>
+                <Legend>Informações do Doador</Legend>
                 <label htmlFor="donorcode">Código do Doador</label>
                 <input type="text" id="donorcode" disabled={true} />
                 <label htmlFor="name">Nome do Doador</label>

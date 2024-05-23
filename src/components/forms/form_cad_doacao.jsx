@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle";
 import { DivBtn } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
+import { Legend } from "../legend/legend_component";
 
 export const FormCadDoacao = (props) => {
 
@@ -21,7 +22,7 @@ export const FormCadDoacao = (props) => {
     return (
         <FormDoacao method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={props.text}>
-                <legend>Lista de objetos a serem doados</legend>
+                <Legend>Lista de objetos a serem doados</Legend>
                 <DivObj>
                     <label htmlFor="codigodoacao">Código da Doação</label>
                     <input type="text" id="codigodoacao" />
