@@ -59,8 +59,7 @@ const ImgEnterprise = styled.img`
     background: none;
     margin: 0 auto;
     transition: .3s ease-in-out;
-    @media screen and (max-width: 1340px),
-    screen and (max-height: 620px) {
+    @media (max-height: 620px) {
         width: 135px;
     }
     @media (max-width: 1080px) {

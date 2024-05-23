@@ -14,7 +14,7 @@ const MainSecondary = styled.div`
     min-height: 100vh;
     display: flex;
     column-gap: 10px;
-    padding: 10px 5px;
+    padding: 5px;
     transition: .3s ease-in-out;
     @media (max-width: 1080px) {
         width: calc(100% - 75px);
