@@ -42,10 +42,10 @@ export const ReportPage = () => {
                     </DivReport>
                     <DivReport>
                         <SectionReport>
-                            <h2>Lista de Fichas Agendadas para Coleta hoje <strong>&nbsp;{diaNaSemana}&nbsp;</strong> dia <strong>&nbsp;{dataFull.getDate()}&nbsp;</strong></h2>
+                            <h2>Lista de Fichas Agendadas para Coleta Hoje<strong>&nbsp;{diaNaSemana}&nbsp;</strong>dia<strong>&nbsp;{dataFull.getDate()}&nbsp;</strong></h2>
                         </SectionReport>
                         <SectionReport>
-                            <h2>Lista de Fichas Coletadas/Não Coletadas dia anterior <strong>&nbsp;{fichaDoSabado()}&nbsp;</strong> dia <strong>&nbsp;{diaDoMesDown()}&nbsp;</strong></h2>
+                            <h2>Lista de Fichas Agendadas dia Anterior<strong>&nbsp;{fichaDoSabado()}&nbsp;</strong>dia<strong>&nbsp;{diaDoMesDown()}&nbsp;</strong></h2>
                         </SectionReport>
                     </DivReport>
                     <DivReport>
