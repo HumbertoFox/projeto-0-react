@@ -5,7 +5,7 @@ const MainReport = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    text-align: center;
     transition: .3s ease-in-out;
 
     h1 {

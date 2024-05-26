@@ -5,6 +5,9 @@ const MainPrimary = styled.main`
     min-height: 100vh;
     display: flex;
     transition: .3s ease-in-out;
+    @media (max-width: 480px) {
+        width: 375px;
+    }
 `;
 
 const MainSecondary = styled.div`
@@ -23,10 +26,6 @@ const MainSecondary = styled.div`
     @media (max-width: 770px) {
         flex-wrap: wrap;
     }
-    @media (max-width: 480px) {
-        width: 375px;
-    }
-
 `;
 
 export { MainPrimary, MainSecondary };
