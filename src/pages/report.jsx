@@ -31,7 +31,7 @@ export const ReportPage = () => {
             <HeaderMenu />
             <MainSecondary>
                 <MainReport>
-                    <h1>Relatório de Coletas</h1>
+                    <h1>Relatório de Coletas e Cadastros</h1>
                     <DivReport>
                         <SectionReport>
                             <h2>Últimas Fichas Coletadas</h2>
@@ -50,7 +50,10 @@ export const ReportPage = () => {
                     </DivReport>
                     <DivReport>
                         <SectionReport>
-                            <h2>Últimas Fichas Cadastradas</h2>
+                            <h2>Últimas Fichas Cadastradas Ordem Crescente</h2>
+                        </SectionReport>
+                        <SectionReport>
+                            <h2>Últimas Fichas Cadastradas Oredem Decrescente</h2>
                         </SectionReport>
                     </DivReport>
                 </MainReport>
