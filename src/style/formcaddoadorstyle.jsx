@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
 
 const FormDoador = styled.form`
-    max-width: 290px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     transition: .3s ease-in-out;
 
+    fieldset {
+        display: flex;
+        flex-direction: column;
+    }
     label {
         color: grey;
         padding-left: 5px;
@@ -13,7 +17,6 @@ const FormDoador = styled.form`
     input[type="text"],
     input[type="number"],
     input[type="tel"] {
-        width: 290px;
         height: 30px;
         font-size: 15px;
         border: 1px solid #D2D4DE;
@@ -31,7 +34,6 @@ const FormDoador = styled.form`
         box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);
     }
     textarea {
-        width: 290px;
         height: 70px;
         font-size: 15px;
         border: 1px solid #D2D4DE;
@@ -63,7 +65,8 @@ const DivRadio = styled.div`
 `;
 
 const DivCnpj = styled.div`
-    display: block;
+    display: flex;
+    flex-direction: column;
 
 ${({ className }) => {
         if (className === "house" || className === "building") {
@@ -75,7 +78,8 @@ ${({ className }) => {
 `;
 
 const DivNomeEdEmp = styled.div`
-    display: block;
+    display: flex;
+    flex-direction: column;
 
 ${({ className }) => {
         if (className === "house") {

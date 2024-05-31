@@ -9,9 +9,8 @@ const FormSearch = styled.form`
         color: grey;
         padding-left: 5px;
     }
-
     input[type="search"] {
-        width: 290px;
+        max-width: 290px;
         height: 30px;
         font-size: 15px;
         border: 1px solid #D2D4DE;

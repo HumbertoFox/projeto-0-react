@@ -11,6 +11,7 @@ const FormDoacao = styled.form`
         padding-left: 5px;
     }
     input[type="text"] {
+        max-width: 280px;
         height: 30px;
         font-size: 15px;
         border: 1px solid #D2D4DE;
@@ -45,10 +46,10 @@ const FormDoacao = styled.form`
         }
     }
     @media (max-width: 480px) {
-        width: 290px;
+        width: 100%;
 
         textarea {
-            width: 290px;
+            width: 280px;
         }
     }
 `;

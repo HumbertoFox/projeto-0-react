@@ -1,4 +1,5 @@
 import React, {
+    useEffect,
     useState
 } from "react"
 import {
@@ -14,16 +15,23 @@ import AgendaImg from "../../assets/agenda.png";
 import ConfirmImg from "../../assets/confirmar.png";
 import ReportImg from "../../assets/relatorio.png";
 import { Link } from "react-router-dom";
-var MenuList = "";
 
 export const HeaderMenu = () => {
 
-    const [navMenuLi, SetNavMenuLi] = useState(MenuList);
+    const [navMenuLi, SetNavMenuLi] = useState("");
 
     const handlesMenuLiClick = (element) => {
         SetNavMenuLi(element);
-        MenuList = element;
+        localStorage.setItem("activeMenuLISelection", element)
     };
+
+    useEffect(() => {
+        SetNavMenuLi("Cadastrar Doação");
+        const activeMenuLISelection = localStorage.getItem("activeMenuLISelection");
+        if (activeMenuLISelection) {
+            SetNavMenuLi(activeMenuLISelection);
+        };
+    }, []);
 
     return (
         <MenuHeader>

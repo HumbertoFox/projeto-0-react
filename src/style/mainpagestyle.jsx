@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainPrimary = styled.main`
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     @media (max-width: 480px) {
@@ -17,9 +17,9 @@ const MainSecondary = styled.div`
     display: flex;
     column-gap: 10px;
     padding: 5px;
+    transition: .3s ease-in-out;
     @media (max-width: 1080px) {
-        transition: .3s ease-in-out;
-        width: calc(100vw - 75px);
+        width: calc(100% - 75px);
         left: 75px;
     }
     @media (max-width: 770px) {
