@@ -12,18 +12,19 @@ import { Link } from "react-router-dom";
 
 export const HeaderMenu = () => {
 
-    const [navMenuLi, SetNavMenuLi] = useState("");
+    const [navMenuLi, setNavMenuLi] = useState("");
 
     const handlesMenuLiClick = (element) => {
-        localStorage.setItem("activeMenuLiSelection", element)
+        setNavMenuLi(element);
+        localStorage.setItem("activeMenuLiSelection", element);
     };
 
     useEffect(() => {
         const activeMenuLiSelection = localStorage.getItem("activeMenuLiSelection");
         if (activeMenuLiSelection != null) {
-            SetNavMenuLi(activeMenuLiSelection);
+            setNavMenuLi(activeMenuLiSelection);
         } else {
-            SetNavMenuLi("Relatório");
+            setNavMenuLi("Relatório");
         };
     }, []);
 
