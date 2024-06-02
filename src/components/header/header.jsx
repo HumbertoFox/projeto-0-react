@@ -20,7 +20,6 @@ export const HeaderMenu = () => {
 
     useEffect(() => {
         const activeMenuLiSelection = localStorage.getItem("activeMenuLiSelection");
-        console.log(activeMenuLiSelection);
         if (activeMenuLiSelection != null) {
             SetNavMenuLi(activeMenuLiSelection);
         } else {
