@@ -23,7 +23,7 @@ export const HeaderMenu = () => {
         if (activeMenuLiSelection != null) {
             SetNavMenuLi(activeMenuLiSelection);
         } else {
-            SetNavMenuLi("Cadastrar Doação");
+            SetNavMenuLi("/");
         };
     }, []);
 
