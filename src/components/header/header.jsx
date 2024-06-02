@@ -1,11 +1,5 @@
-import React, {
-    useEffect,
-    useState
-} from "react"
-import {
-    MenuHeader,
-    ImgEnterprise
-} from "../../style/headerstyle";
+import React, { useEffect, useState } from "react";
+import { MenuHeader, ImgEnterprise } from "../../style/headerstyle";
 import EnterpriseImg from "../../assets/LOGO BFN - INTER.png";
 import ClothesImg from "../../assets/doacao-de-roupas.png";
 import UserImg from "../../assets/novo-usuario.png";
@@ -21,15 +15,15 @@ export const HeaderMenu = () => {
     const [navMenuLi, SetNavMenuLi] = useState("");
 
     const handlesMenuLiClick = (element) => {
-        SetNavMenuLi(element);
-        localStorage.setItem("activeMenuLISelection", element)
+        localStorage.setItem("activeMenuLiSelection", element)
     };
 
     useEffect(() => {
-        SetNavMenuLi("Cadastrar Doação");
-        const activeMenuLISelection = localStorage.getItem("activeMenuLISelection");
-        if (activeMenuLISelection) {
-            SetNavMenuLi(activeMenuLISelection);
+        const activeMenuLiSelection = localStorage.getItem("activeMenuLiSelection");
+        if (activeMenuLiSelection != null) {
+            SetNavMenuLi(activeMenuLiSelection);
+        } else {
+            SetNavMenuLi("Cadastrar Doação");
         };
     }, []);
 
@@ -38,10 +32,10 @@ export const HeaderMenu = () => {
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
             <nav>
                 <ul>
-                    <li title="Cadastrar Doação"
-                        name="cadastro_doacao"
-                    >
+                    <li>
                         <Link to={"/CadastroDoacao"}
+                            title="Cadastrar Doação"
+                            name="cadastro_doacao"
                             className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Cadastrar Doação")}
                         >
@@ -49,10 +43,10 @@ export const HeaderMenu = () => {
                             <span>Cadastrar Doação</span>
                         </Link>
                     </li>
-                    <li title="Cadastrar Doador"
-                        name="cadastro_doador"
-                    >
+                    <li>
                         <Link to={"/CadastroDoador"}
+                            title="Cadastrar Doador"
+                            name="cadastro_doador"
                             className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Cadastrar Doador")}
                         >
@@ -60,10 +54,10 @@ export const HeaderMenu = () => {
                             <span>Cadastrar Doador</span>
                         </Link>
                     </li>
-                    <li title="Editar Doação"
-                        name="editar_doacao"
-                    >
+                    <li>
                         <Link to={"/EditaDoacao"}
+                            title="Editar Doação"
+                            name="editar_doacao"
                             className={navMenuLi === "Editar Doação" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Editar Doação")}
                         >
@@ -71,10 +65,10 @@ export const HeaderMenu = () => {
                             <span>Editar Doação</span>
                         </Link>
                     </li>
-                    <li title="Editar Doador"
-                        name="editar_doador"
-                    >
+                    <li>
                         <Link to={"/EditaDoador"}
+                            title="Editar Doador"
+                            name="editar_doador"
                             className={navMenuLi === "Editar Doador" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Editar Doador")}
                         >
@@ -82,10 +76,10 @@ export const HeaderMenu = () => {
                             <span>Editar Doador</span>
                         </Link>
                     </li>
-                    <li title="Agendar Coleta"
-                        name="agendar_coleta"
-                    >
+                    <li>
                         <Link to={"/AgendaColeta"}
+                            title="Agendar Coleta"
+                            name="agendar_coleta"
                             className={navMenuLi === "Agendar Coleta" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Agendar Coleta")}
                         >
@@ -93,10 +87,10 @@ export const HeaderMenu = () => {
                             <span>Agendar Coleta</span>
                         </Link>
                     </li>
-                    <li title="Confirmar Coleta"
-                        name="confirmar_coleta"
-                    >
+                    <li>
                         <Link to={"/ConfirmColeta"}
+                            title="Confirmar Coleta"
+                            name="confirmar_coleta"
                             className={navMenuLi === "Confirmar Coleta" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Confirmar Coleta")}
                         >
@@ -104,10 +98,10 @@ export const HeaderMenu = () => {
                             <span>Confirmar Coleta</span>
                         </Link>
                     </li>
-                    <li title="Relatório"
-                        name="gerar_relatorio"
-                    >
+                    <li>
                         <Link to={"/"}
+                            title="Relatório"
+                            name="gerar_relatorio"
                             className={navMenuLi === "Relatório" ? "active" : ""}
                             onClick={() => handlesMenuLiClick("Relatório")}
                         >

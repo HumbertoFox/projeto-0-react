@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { viaCepApi } from "../../services/viacep";
-import {
-    DivBtn,
-    DivCnpj,
-    DivNomeEdEmp,
-    DivRadio,
-    FormDoador
-} from "../../style/formcaddoadorstyle";
+import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
 
@@ -85,19 +79,19 @@ export const FormCadDoador = (props) => {
                 <label htmlFor="donorcode">Código do Doador</label>
                 <input type="text" id="donorcode" disabled={true} />
                 <label htmlFor="name">Nome do Doador</label>
-                <input type="text" id="name" {...register("name")} />
+                <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`}{...register("name", { required: "Required field" })} />
                 <label htmlFor="contact1">Número Móvel do Responsável</label>
-                <input type="tel" id="contact1" {...register("contact1")} />
+                <input type="tel" id="contact1" placeholder={`${errors.contact1 ? "Campo Obrigatório" : ""}`} className={`${errors.contact1 ? "required" : ""}`} {...register("contact1", { required: "Required field" })} />
                 <label htmlFor="contact2">Número Móvel do Responsável/Opcional</label>
-                <input type="tel" id="contact2" {...register("contact2")} />
+                <input type="tel" id="contact2" placeholder={`${errors.contact2 ? "Campo Obrigatório" : ""}`} className={`${errors.contact2 ? "required" : ""}`} {...register("contact2", { required: "Required field" })} />
                 <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
                 <input type="tel" id="contact3" {...register("contact3")} />
                 <label htmlFor="zipcode">Cep</label>
                 <input type="number" id="zipcode" {...register("zipcode")} onBlur={checkedZipCode} />
                 <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
-                <input type="text" id="street" {...register("street")} />
+                <input type="text" id="street" placeholder={`${errors.street ? "Campo Obrigatório" : ""}`} className={`${errors.street ? "required" : ""}`} {...register("street", { required: "Required field" })} />
                 <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
-                <input type="text" id="nunresidence" {...register("nunresidence")} />
+                <input type="text" id="nunresidence" placeholder={`${errors.nunresidence ? "Campo Obrigatório" : ""}`} className={`${errors.nunresidence ? "required" : ""}`} {...register("nunresidence", { required: "Required field" })} />
                 <DivRadio>
                     <input type="radio"
                         id="house"
@@ -136,9 +130,9 @@ export const FormCadDoador = (props) => {
                 <label htmlFor="referencepoint">Ponto de Referência</label>
                 <textarea id="referencepoint" {...register("referencepoint")} ></textarea>
                 <label htmlFor="neighborhood">Bairro/Distrito</label>
-                <input type="text" id="neighborhood" {...register("neighborhood")} />
+                <input type="text" id="neighborhood" placeholder={`${errors.neighborhood ? "Campo Obrigatório" : ""}`} className={`${errors.neighborhood ? "required" : ""}`} {...register("neighborhood", { required: "Required field" })} />
                 <label htmlFor="city">Cidade</label>
-                <input type="text" id="city" {...register("city")} />
+                <input type="text" id="city" placeholder={`${errors.city ? "Campo Obrigatório" : ""}`} className={`${errors.city ? "required" : ""}`} {...register("city", { required: "Required field" })} />
             </fieldset>
             <DivBtn>
                 <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />

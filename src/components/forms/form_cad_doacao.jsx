@@ -31,11 +31,11 @@ export const FormCadDoacao = (props) => {
                     <DivObjsQuant>
                         <DivObj>
                             <label htmlFor="objeto1">objeto 1</label>
-                            <input type="text" id="objeto1" {...register("objeto1")} />
+                            <input type="text" id="objeto1" placeholder={`${errors.objeto1 ? "Campo Obrigatório" : ""}`} className={`${errors.objeto1 ? "required" : ""}`} {...register("objeto1", { required: "Required field" })} />
                         </DivObj>
                         <DivQuant>
                             <label htmlFor="quant1">Qantidade/Caixa/Sacola</label>
-                            <input type="text" id="quant1" {...register("quant1")} />
+                            <input type="text" id="quant1" placeholder={`${errors.quant1 ? "Obrigatório" : ""}`} className={`${errors.quant1 ? "required" : ""}`} {...register("quant1", { required: "Required field" })} />
                         </DivQuant>
                     </DivObjsQuant>
                     <DivObjsQuant>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ImgAlert from "../assets/ponto-de-exclamacao.png";
 
 const FormDoacao = styled.form`
     max-width: 790px;
@@ -36,6 +37,23 @@ const FormDoacao = styled.form`
         outline: none;
         margin-bottom: 5px;
         transition: .3s ease-in-out;
+    }
+    input[type=search]:focus {
+        border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
+        box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);
+    }
+    input.required:focus {
+        border: 1px solid hsla(332.47, 100%, 50%, .5);
+        box-shadow: 0 0 5px hsla(332.47, 100%, 50%, .5);
+    }
+    input.required {
+        border: 1px solid hsla(332.47, 100%, 50%, .5);
+        background: url(${ImgAlert}) right 2% bottom 50% no-repeat;
+        background-size: 20px;
+    }
+    .required::placeholder {
+        font-style: italic;
+        color: hsla(332.47, 100%, 50%, .5);
     }
     
     @media (max-width: 1340px) {
@@ -84,7 +102,7 @@ const DivObj = styled.div`
         width: 100%;
 
         input[type="text"] {
-            width: 290px;
+            width: 280px;
         }
     }
 `;
@@ -96,6 +114,7 @@ const DivQuant = styled.div`
     
     input[type="text"] {
         width: 150px;
+        transition: .3s ease-in-out;
     }
     @media (max-width: 480px) {
         width: 100%;

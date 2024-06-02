@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import ImgAlert from "../assets/ponto-de-exclamacao.png";
 
 const FormDoador = styled.form`
     width: 280px;
@@ -16,7 +17,8 @@ const FormDoador = styled.form`
     }
     input[type="text"],
     input[type="number"],
-    input[type="tel"] {
+    input[type="tel"],
+    textarea {
         height: 30px;
         font-size: 15px;
         border: 1px solid #D2D4DE;
@@ -35,13 +37,20 @@ const FormDoador = styled.form`
     }
     textarea {
         height: 70px;
-        font-size: 15px;
-        border: 1px solid #D2D4DE;
-        border-radius: 5px;
         padding: 5px;
-        outline: none;
-        margin-bottom: 5px;
-        transition: .3s ease-in-out;
+    }
+    input.required:focus {
+        border: 1px solid hsla(332.47, 100%, 50%, .5);
+        box-shadow: 0 0 5px hsla(332.47, 100%, 50%, .5);
+    }
+    input.required {
+        border: 1px solid hsla(332.47, 100%, 50%, .5);
+        background: url(${ImgAlert}) right 2% bottom 50% no-repeat;
+        background-size: 20px;
+    }
+    .required::placeholder {
+        font-style: italic;
+        color: hsla(332.47, 100%, 50%, .5);
     }
 `;
 

@@ -11,7 +11,7 @@ const MainPrimary = styled.main`
 
 const MainSecondary = styled.div`
     position: relative;
-    width: calc(100vw - 250px);
+    width: calc(100% - 250px);
     left: 250px;
     min-height: 100vh;
     display: flex;

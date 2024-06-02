@@ -19,7 +19,16 @@ export const FormSearchDoador = () => {
     return (
         <FormSearch method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="codnametel">Pesquisar Nome/Telefone/Código Doador</label>
-            <input type="search" id="codnametel" {...register("codnametel")} />
+            <input
+                type="search"
+                id="codnametel"
+                placeholder={`${errors.codnametel ? "Campo Obrigatório" : ""}`}
+                className={`${errors.codnametel ? "required" : ""}`}
+                {
+                ...register("codnametel", {
+                    required: "Required field"
+                })}
+            />
             <DivBtn>
                 <SubmitButton value="Código" />
                 <SubmitButton value="Nome" />
