@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { MenuHeader, ImgEnterprise } from "../../style/headerstyle";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { MenuHeader, ImgEnterprise, LiLogout } from "../../style/headerstyle";
 import EnterpriseImg from "../../assets/LOGO BFN - INTER.png";
 import ClothesImg from "../../assets/doacao-de-roupas.png";
 import UserImg from "../../assets/novo-usuario.png";
@@ -9,16 +12,13 @@ import AgendaImg from "../../assets/agenda.png";
 import ConfirmImg from "../../assets/confirmar.png";
 import ReportImg from "../../assets/relatorio.png";
 import { Link } from "react-router-dom";
-
+library.add(fas);
 export const HeaderMenu = () => {
-
     const [navMenuLi, setNavMenuLi] = useState("");
-
     const handlesMenuLiClick = (element) => {
         setNavMenuLi(element);
         localStorage.setItem("activeMenuLiSelection", element);
     };
-
     useEffect(() => {
         const activeMenuLiSelection = localStorage.getItem("activeMenuLiSelection");
         if (activeMenuLiSelection != null) {
@@ -27,7 +27,6 @@ export const HeaderMenu = () => {
             setNavMenuLi("Relatório");
         };
     }, []);
-
     return (
         <MenuHeader>
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
@@ -110,8 +109,14 @@ export const HeaderMenu = () => {
                             <span>Gerar Relatório</span>
                         </Link>
                     </li>
+                    <LiLogout title="Sair do Sistema">
+                        <Link to={"/"}>
+                            <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
+                            <span>Sair do Sistema</span>
+                        </Link>
+                    </LiLogout>
                 </ul>
             </nav>
         </MenuHeader>
-    )
-}
+    );
+};

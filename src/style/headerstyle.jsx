@@ -1,7 +1,6 @@
 import styled from "styled-components";
-
 const MenuHeader = styled.header`
-    width: 250px;
+    width: 200px;
     height: 100vh;
     display: flex;
     position: fixed;
@@ -11,7 +10,6 @@ const MenuHeader = styled.header`
     background-color: #AAF998;
     transition: .3s ease-in-out;
     overflow-x: hidden;
-
     nav,
     ul {
         width: 100%;
@@ -33,7 +31,7 @@ const MenuHeader = styled.header`
         background-color: #79D1FF;
     }
     nav img {
-        width: 40px;
+        width: 30px;
         margin-right: 20px;
         background: none;
     }
@@ -41,18 +39,17 @@ const MenuHeader = styled.header`
         background-color: #79D1FF;;
     }
     span {
-        font-size: 18px;
+        font-size: 1rem;
         background: none;
     }
     @media (max-width: 1080px) {
-        width: 75px;
+        width: 70px;
         
         span {
             display: none;
         }
     }
 `;
-
 const ImgEnterprise = styled.img`
     display: flex;
     width: 190px;
@@ -66,5 +63,13 @@ const ImgEnterprise = styled.img`
         width: 100%;
     }
 `;
-
-export { MenuHeader, ImgEnterprise };
+const LiLogout = styled.li`
+    margin-top: 15px;
+    svg {
+        font-size: 2rem;
+        margin-right: 20px;
+        background: none;
+        rotate: 180deg;
+    }
+`;
+export { MenuHeader, ImgEnterprise, LiLogout };
