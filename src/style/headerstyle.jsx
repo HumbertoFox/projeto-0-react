@@ -18,25 +18,28 @@ const MenuHeader = styled.header`
     ul {
         display: flex;
         flex-direction: column;
-        gap: 5px;
     }
-    li img {
-        width: 30px;
-        margin-right: 20px;
-        background: none;
+    li {
+        transition: .4s ease-in-out;
+    }
+    li:hover a {
+        color: #FFF;
     }
     a {
         display: flex;
         align-items: center;
         padding: 10px;
         background-color: #AAF998;
-        transition: .3s ease-in-out;
+        transition: .4s ease-in-out;
     }
-    li:hover a {
+    a svg {
+        width: 30px;
+        font-size: 2rem;
+        margin-right: 15px;
+        background: none;
+    }
+    .active {
         background-color: #79D1FF;
-    }
-    .active a {
-        background-color: #79D1FF;;
     }
     span {
         font-size: 1rem;
@@ -51,7 +54,7 @@ const MenuHeader = styled.header`
 `;
 const ImgEnterprise = styled.img`
     display: flex;
-    width: 190px;
+    width: 150px;
     background: none;
     margin: 0 auto;
     transition: .3s ease-in-out;
@@ -63,11 +66,8 @@ const ImgEnterprise = styled.img`
     }
 `;
 const LiLogout = styled.li`
-    margin-top: 15px;
+    margin-top: 10px;
     svg {
-        font-size: 2rem;
-        margin-right: 20px;
-        background: none;
         rotate: 180deg;
     }
 `;
