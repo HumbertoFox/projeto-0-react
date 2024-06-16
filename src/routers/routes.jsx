@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ReportPage } from "../pages/report";
 import { CadDoadorPage } from "../pages/cadastrar-doador";
@@ -6,6 +7,7 @@ import { EditDoadoorPage } from "../pages/editar-doador";
 import { EditDoacaoPage } from "../pages/editar-doacao";
 import { AgendColetPage } from "../pages/agendar-coleta";
 import { ConfirmColetPage } from "../pages/confirmar-coleta";
+import { AgendCalendarPage } from "../pages/agenda-calendar";
 export const AppRouters = () => {
     return (
         <BrowserRouter>
@@ -17,7 +19,8 @@ export const AppRouters = () => {
                 <Route path="/EditaDoador" element={<EditDoadoorPage />} />
                 <Route path="/AgendarColeta" element={<AgendColetPage />} />
                 <Route path="/ConfirmColeta" element={<ConfirmColetPage />} />
-                <Route path="*" element={<ReportPage />} />
+                <Route path="/Agenda" element={<AgendCalendarPage />} />
+                <Route path="*" element={<AgendCalendarPage />} />
             </Routes>
         </BrowserRouter>
     );

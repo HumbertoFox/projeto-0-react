@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const DivMainDoacao = styled.div`
     display: flex;
     flex-direction: column;
@@ -9,11 +8,16 @@ const DivMainDoacao = styled.div`
         display: none;
     }
 `;
-
 const DivMainEditDoador = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 `;
-
-export { DivMainDoacao, DivMainEditDoador };
+const DivAgenda = styled.div`
+    width: 100%;
+    display: flex;
+    .rbc-calendar {
+        width: 100%;
+    }
+`;
+export { DivMainDoacao, DivMainEditDoador, DivAgenda };

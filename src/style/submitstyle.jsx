@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const Submit = styled.input.attrs({ type: 'submit' })`
     background-color: #AAF998;
     border-radius: 5px;
@@ -12,5 +11,4 @@ const Submit = styled.input.attrs({ type: 'submit' })`
         text-shadow: 1px 1px 0.5px #AAF998;
     }
 `;
-
 export { Submit };
