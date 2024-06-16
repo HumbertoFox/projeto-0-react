@@ -19,6 +19,20 @@ npm install -D react-router-dom
 
 npm install react-hook-form
 
+npm install axios
+
+npm install --save @fortawesome/fontawesome-svg-core
+
+npm install --save @fortawesome/free-solid-svg-icons
+
+npm install --save @fortawesome/free-regular-svg-icons
+
+npm install --save @fortawesome/react-fontawesome@latest
+
+npm install --save react-big-calendar
+
+npm install --save moment react-moment
+
 ##
 
 ### Construído com
