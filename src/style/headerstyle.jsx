@@ -18,7 +18,12 @@ const MenuHeader = styled.header`
     ul {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
+    }
+    li img {
+        width: 30px;
+        margin-right: 20px;
+        background: none;
     }
     a {
         display: flex;
@@ -27,15 +32,10 @@ const MenuHeader = styled.header`
         background-color: #AAF998;
         transition: .3s ease-in-out;
     }
-    a:hover {
+    li:hover a {
         background-color: #79D1FF;
     }
-    nav img {
-        width: 30px;
-        margin-right: 20px;
-        background: none;
-    }
-    .active {
+    .active a {
         background-color: #79D1FF;;
     }
     span {
@@ -44,7 +44,6 @@ const MenuHeader = styled.header`
     }
     @media (max-width: 1080px) {
         width: 70px;
-        
         span {
             display: none;
         }

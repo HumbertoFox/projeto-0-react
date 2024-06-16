@@ -11,9 +11,10 @@ import VerifiedUserImg from "../../assets/usuario-verificado.png";
 import AgendaImg from "../../assets/agenda.png";
 import ConfirmImg from "../../assets/confirmar.png";
 import ReportImg from "../../assets/relatorio.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 library.add(fas);
 export const HeaderMenu = () => {
+    const navigate = useNavigate();
     const [navMenuLi, setNavMenuLi] = useState("");
     const handlesMenuLiClick = (element) => {
         setNavMenuLi(element);
@@ -23,6 +24,19 @@ export const HeaderMenu = () => {
         const activeMenuLiSelection = localStorage.getItem("activeMenuLiSelection");
         if (activeMenuLiSelection != null) {
             setNavMenuLi(activeMenuLiSelection);
+            if (activeMenuLiSelection == "Cadastrar Doação") {
+                navigate("/CadastroDoacao");
+            } else if (activeMenuLiSelection == "Cadastrar Doador") {
+                navigate("/CadastroDoador");
+            } else if (activeMenuLiSelection == "Editar Doação") {
+                navigate("/EditaDoacao");
+            } else if (activeMenuLiSelection == "Editar Doador") {
+                navigate("/EditaDoador");
+            } else if (activeMenuLiSelection == "Agendar Coleta") {
+                navigate("/AgendaColeta");
+            } else if (activeMenuLiSelection == "Confirmar Coleta") {
+                navigate("/ConfirmColeta");
+            };
         } else {
             setNavMenuLi("Relatório");
         };
@@ -32,79 +46,79 @@ export const HeaderMenu = () => {
             <ImgEnterprise src={EnterpriseImg} alt="Logo Empresa" />
             <nav>
                 <ul>
-                    <li>
-                        <Link to={"/CadastroDoacao"}
-                            title="Cadastrar Doação"
-                            name="cadastro_doacao"
-                            className={navMenuLi === "Cadastrar Doação" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Cadastrar Doação")}
-                        >
+                    <li
+                        title="Cadastrar Doação"
+                        name="cadastro_doacao"
+                        className={navMenuLi == "Cadastrar Doação" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Cadastrar Doação")}
+                    >
+                        <Link to={"/CadastroDoacao"}>
                             <img src={ClothesImg} alt="Icon Doação" />
                             <span>Cadastrar Doação</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/CadastroDoador"}
-                            title="Cadastrar Doador"
-                            name="cadastro_doador"
-                            className={navMenuLi === "Cadastrar Doador" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Cadastrar Doador")}
-                        >
+                    <li
+                        title="Cadastrar Doador"
+                        name="cadastro_doador"
+                        className={navMenuLi == "Cadastrar Doador" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Cadastrar Doador")}
+                    >
+                        <Link to={"/CadastroDoador"}>
                             <img src={UserImg} alt="Icon Doador" />
                             <span>Cadastrar Doador</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/EditaDoacao"}
-                            title="Editar Doação"
-                            name="editar_doacao"
-                            className={navMenuLi === "Editar Doação" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Editar Doação")}
-                        >
+                    <li
+                        title="Editar Doação"
+                        name="editar_doacao"
+                        className={navMenuLi == "Editar Doação" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Editar Doação")}
+                    >
+                        <Link to={"/EditaDoacao"}>
                             <img src={DonationImg} alt="Icon Editar Doação" />
                             <span>Editar Doação</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/EditaDoador"}
-                            title="Editar Doador"
-                            name="editar_doador"
-                            className={navMenuLi === "Editar Doador" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Editar Doador")}
-                        >
+                    <li
+                        title="Editar Doador"
+                        name="editar_doador"
+                        className={navMenuLi == "Editar Doador" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Editar Doador")}
+                    >
+                        <Link to={"/EditaDoador"}>
                             <img src={VerifiedUserImg} alt="Icon Editar Doador" />
                             <span>Editar Doador</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/AgendaColeta"}
-                            title="Agendar Coleta"
-                            name="agendar_coleta"
-                            className={navMenuLi === "Agendar Coleta" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Agendar Coleta")}
-                        >
+                    <li
+                        title="Agendar Coleta"
+                        name="agendar_coleta"
+                        className={navMenuLi == "Agendar Coleta" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Agendar Coleta")}
+                    >
+                        <Link to={"/AgendaColeta"}>
                             <img src={AgendaImg} alt="Icon Agendar coleta" />
                             <span>Agendar Coleta</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/ConfirmColeta"}
-                            title="Confirmar Coleta"
-                            name="confirmar_coleta"
-                            className={navMenuLi === "Confirmar Coleta" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Confirmar Coleta")}
-                        >
+                    <li
+                        title="Confirmar Coleta"
+                        name="confirmar_coleta"
+                        className={navMenuLi == "Confirmar Coleta" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Confirmar Coleta")}
+                    >
+                        <Link to={"/ConfirmColeta"}>
                             <img src={ConfirmImg} alt="Icon Confirmar Coleta" />
                             <span>Confirmar Coleta</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to={"/"}
-                            title="Relatório"
-                            name="gerar_relatorio"
-                            className={navMenuLi === "Relatório" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Relatório")}
-                        >
+                    <li
+                        title="Relatório"
+                        name="gerar_relatorio"
+                        className={navMenuLi == "Relatório" ? "active" : ""}
+                        onClick={() => handlesMenuLiClick("Relatório")}
+                    >
+                        <Link to={"/Relatorio"}>
                             <img src={ReportImg} alt="Icon Relatório" />
                             <span>Gerar Relatório</span>
                         </Link>
