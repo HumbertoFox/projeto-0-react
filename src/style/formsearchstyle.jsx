@@ -28,7 +28,7 @@ export const FormSearch = styled.form`
     }
     input.required {
         border: 1px solid hsla(332.47, 100%, 50%, .5);
-        background: url(${ImgAlert}) right 7% bottom 50% no-repeat;
+        background: url(${ImgAlert}) right 9% bottom 50% no-repeat;
         background-size: 20px;
     }
     .required::placeholder {
