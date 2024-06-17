@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import ImgAlert from "../assets/ponto-de-exclamacao.png";
-
-const FormSearch = styled.form`
+export const FormSearch = styled.form`
     max-width: 290px;
     display: flex;
     flex-direction: column;
-
     label {
         color: grey;
         padding-left: 5px;
@@ -30,7 +28,7 @@ const FormSearch = styled.form`
     }
     input.required {
         border: 1px solid hsla(332.47, 100%, 50%, .5);
-        background: url(${ImgAlert}) right 2% bottom 50% no-repeat;
+        background: url(${ImgAlert}) right 7% bottom 50% no-repeat;
         background-size: 20px;
     }
     .required::placeholder {
@@ -38,5 +36,3 @@ const FormSearch = styled.form`
         color: hsla(332.47, 100%, 50%, .5);
     }
 `;
-
-export { FormSearch };

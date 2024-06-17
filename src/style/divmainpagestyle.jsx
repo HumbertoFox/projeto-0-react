@@ -15,9 +15,17 @@ const DivMainEditDoador = styled.div`
 `;
 const DivAgenda = styled.div`
     width: 100%;
-    display: flex;
-    .rbc-calendar {
-        width: 100%;
+    .rbc-event-content {
+        text-align: center;
     }
 `;
-export { DivMainDoacao, DivMainEditDoador, DivAgenda };
+const DivToolbarCalendar = styled.div`
+    .rbc-toolbar-label h2 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    button {
+        cursor: pointer;
+    }
+`;
+export { DivMainDoacao, DivMainEditDoador, DivAgenda, DivToolbarCalendar };

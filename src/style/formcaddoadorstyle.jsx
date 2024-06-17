@@ -1,12 +1,15 @@
 import styled, { css } from "styled-components";
 import ImgAlert from "../assets/ponto-de-exclamacao.png";
-
 const FormDoador = styled.form`
     width: 280px;
     display: flex;
     flex-direction: column;
     transition: .3s ease-in-out;
-
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
     fieldset {
         display: flex;
         flex-direction: column;
@@ -53,7 +56,6 @@ const FormDoador = styled.form`
         color: hsla(332.47, 100%, 50%, .5);
     }
 `;
-
 const DivRadio = styled.div`
     display: flex;
     padding: 10px 0;
@@ -72,11 +74,9 @@ const DivRadio = styled.div`
         color: hsla(205.46, 86.5%, 46.47%, .5);
     }
 `;
-
 const DivCnpj = styled.div`
     display: flex;
     flex-direction: column;
-
 ${({ className }) => {
         if (className === "house" || className === "building") {
             return css`
@@ -85,11 +85,9 @@ ${({ className }) => {
         };
     }};
 `;
-
 const DivNomeEdEmp = styled.div`
     display: flex;
     flex-direction: column;
-
 ${({ className }) => {
         if (className === "house") {
             return css`
@@ -98,10 +96,8 @@ ${({ className }) => {
         };
     }};
 `;
-
 const DivBtn = styled.div`
     display: flex;
     justify-content: space-evenly;
 `;
-
 export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivBtn };

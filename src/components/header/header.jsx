@@ -3,7 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
-import { MenuHeader, ImgEnterprise, LiLogout } from "../../style/headerstyle";
+import { MenuHeader, ImgEnterprise, LiLogout, LiSvgRotation } from "../../style/headerstyle";
 import EnterpriseImg from "../../assets/LOGO BFN - INTER.png";
 import { Link, useNavigate } from "react-router-dom";
 library.add(fas, far);
@@ -54,7 +54,7 @@ export const HeaderMenu = () => {
                             <span>Cadastrar Doação</span>
                         </Link>
                     </li>
-                    <li>
+                    <LiSvgRotation>
                         <Link
                             to={"/CadastroDoador"}
                             title="Cadastrar Doador"
@@ -65,7 +65,7 @@ export const HeaderMenu = () => {
                             <FontAwesomeIcon icon="fa-solid fa-user-plus" />
                             <span>Cadastrar Doador</span>
                         </Link>
-                    </li>
+                    </LiSvgRotation>
                     <li>
                         <Link
                             to={"/EditaDoacao"}
@@ -78,7 +78,7 @@ export const HeaderMenu = () => {
                             <span>Editar Doação</span>
                         </Link>
                     </li>
-                    <li>
+                    <LiSvgRotation>
                         <Link
                             to={"/EditaDoador"}
                             title="Editar Doador"
@@ -89,7 +89,7 @@ export const HeaderMenu = () => {
                             <FontAwesomeIcon icon="fa-solid fa-user-pen" />
                             <span>Editar Doador</span>
                         </Link>
-                    </li>
+                    </LiSvgRotation>
                     <li>
                         <Link
                             to={"/AgendarColeta"}
@@ -114,7 +114,7 @@ export const HeaderMenu = () => {
                             <span>Confirmar Coleta</span>
                         </Link>
                     </li>
-                    <li>
+                    <LiSvgRotation>
                         <Link
                             to={"/Relatorio"}
                             title="Relatório"
@@ -125,7 +125,7 @@ export const HeaderMenu = () => {
                             <FontAwesomeIcon icon="fa-solid fa-file-circle-check" />
                             <span>Relatório</span>
                         </Link>
-                    </li>
+                    </LiSvgRotation>
                     <li>
                         <Link
                             to={"/Agenda"}

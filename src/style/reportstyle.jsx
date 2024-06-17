@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const MainReport = styled.div`
     width: 100%;
     display: flex;
@@ -7,7 +6,6 @@ const MainReport = styled.div`
     justify-content: space-between;
     text-align: center;
     transition: .3s ease-in-out;
-
     h1 {
         font-size: 18px;
     }
@@ -17,7 +15,6 @@ const MainReport = styled.div`
         text-shadow: 1px 1px 0.5px #AAF998;
     }
 `;
-
 const DivReport = styled.div`
     width: 100%;
     height: 100%;
@@ -26,12 +23,10 @@ const DivReport = styled.div`
         flex-wrap: wrap;
     }
 `;
-
 const SectionReport = styled.section`
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
-
 export { MainReport, DivReport, SectionReport };

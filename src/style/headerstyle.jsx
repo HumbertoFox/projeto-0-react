@@ -65,10 +65,12 @@ const ImgEnterprise = styled.img`
         width: 100%;
     }
 `;
-const LiLogout = styled.li`
-    margin-top: 10px;
+const LiSvgRotation = styled.li`
     svg {
-        rotate: 180deg;
+        transform: rotateY(180deg);
     }
 `;
-export { MenuHeader, ImgEnterprise, LiLogout };
+const LiLogout = styled(LiSvgRotation)`
+    margin-top: 10px;
+`;
+export { MenuHeader, ImgEnterprise, LiSvgRotation, LiLogout };
