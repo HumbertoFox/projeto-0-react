@@ -6,3 +6,40 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model cpf {
+  cpf         String   @id @db.VarChar(11)
+  name        String   @db.VarChar(100)
+  dateofbirth DateTime @db.Date
+  email       String   @db.VarChar(150)
+  telephone   String   @db.VarChar(11)
+  user        user[]
+}
+
+model zipcode {
+  zipcode     String        @id @unique @db.VarChar(11)
+  street      String        @db.VarChar(100)
+  district    String        @db.VarChar(100)
+  city        String        @db.VarChar(100)
+  address_all address_all[]
+}
+
+model address_all {
+  address_id      Int      @id @default(autoincrement())
+  zipcode         zipcode  @relation(fields: [zipcodeZipcode], references: [zipcode])
+  residencenumber String   @db.VarChar(50)
+  building        String   @db.VarChar(100)
+  buildingblock   String   @db.VarChar(50)
+  apartment       String   @db.VarChar(50)
+  registerdate    DateTime @default(now()) @db.Timestamp(0)
+  zipcodeZipcode  String   @db.VarChar(11)
+  user            user[]
+}
+
+model user {
+  id                   Int         @id @default(autoincrement())
+  cpf                  cpf         @relation(fields: [cpfCpf], references: [cpf])
+  address_id           address_all @relation(fields: [address_idAddress_id], references: [address_id])
+  cpfCpf               String      @db.VarChar(11)
+  address_idAddress_id Int         @db.Integer
+}
