@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { viaCepApi } from "../../services/viacep";
 import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-
-export const FormCadDoador = (props) => {
-
+export const FormCadDoador = ({ fieldsetdonor }) => {
     const [radioSelect, setRadioSelect] = useState("");
 
     const checkedZipCode = async (e) => {
@@ -23,7 +21,7 @@ export const FormCadDoador = (props) => {
             setFocus('contact3');
             alert("Formato de CEP inválido.");
             return;
-        };
+        }
 
         const zipcode = e.target.value.replace(/\D/g, '');
         var validazipcode = /^[0-9]{8}$/;
@@ -74,7 +72,7 @@ export const FormCadDoador = (props) => {
 
     return (
         <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
-            <fieldset disabled={props.text}>
+            <fieldset disabled={fieldsetdonor}>
                 <Legend>Informações do Doador</Legend>
                 <label htmlFor="donorcode">Código do Doador</label>
                 <input type="text" id="donorcode" disabled={true} />
@@ -139,5 +137,5 @@ export const FormCadDoador = (props) => {
                 <SubmitButton title="Cadastrar Doador" id="cadastrar_doador" value="Cadastrar Doador" />
             </DivBtn>
         </FormDoador>
-    )
-}
+    );
+};

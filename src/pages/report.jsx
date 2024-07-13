@@ -7,24 +7,22 @@ let diaNaSemana = diaDaSemana[dataFull.getDay()];
 let diaNoMesDownTwo = dataFull.getDate() - 2;
 let diaNoMesDownOne = dataFull.getDate() - 1;
 let diaNaSemanaDown = diaDaSemana[dataFull.getDay() - 1];
-
 export const ReportPage = () => {
-
     function fichaDoSabado() {
         if (diaNaSemana == "Segunda") {
             return "Sábado";
         } else {
             return diaNaSemanaDown;
-        };
-    };
+        }
+    }
 
     function diaDoMesDown() {
         if (diaNaSemana == "Segunda") {
             return diaNoMesDownTwo;
         } else {
             return diaNoMesDownOne;
-        };
-    };
+        }
+    }
 
     return (
         <MainPrimary>
@@ -59,5 +57,5 @@ export const ReportPage = () => {
                 </MainReport>
             </MainSecondary>
         </MainPrimary >
-    )
-}
+    );
+};

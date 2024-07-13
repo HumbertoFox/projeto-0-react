@@ -1,11 +1,8 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { DivBtn } from "../../style/formcaddoadorstyle";
 import { FormSearch } from "../../style/formsearchstyle";
 import { SubmitButton } from "../button/button_submit";
-
 export const FormSearchDoador = () => {
-
     const {
         register,
         handleSubmit,
@@ -14,10 +11,9 @@ export const FormSearchDoador = () => {
 
     const onSubmit = e => {
         console.log(e);
-    }
-
+    };
     return (
-        <FormSearch method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
+        <FormSearch onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="codnametel">Pesquisar Nome/Telefone/Código Doador</label>
             <input
                 type="search"
@@ -35,5 +31,5 @@ export const FormSearchDoador = () => {
                 <SubmitButton value="Telefone" />
             </DivBtn>
         </FormSearch>
-    )
-}
+    );
+};

@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ReportPage } from "../pages/report";
 import { CadDoadorPage } from "../pages/cadastrar-doador";

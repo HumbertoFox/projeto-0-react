@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "moment/dist/locale/pt-br";
@@ -25,6 +25,7 @@ export const AgendaCalendar = () => {
             backgroundColor: element.color
         }
     });
+    console.log(setEvents);
     return (
         <DivAgenda>
             <DragAndDropCaledar

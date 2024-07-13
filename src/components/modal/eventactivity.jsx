@@ -1,4 +1,3 @@
-import React from "react";
 import { DivEventsActive, DivMaimEvents } from "../../style/eventactivitystyle";
 import { ButtonButton } from "../button/buttonbutton";
 export const ActivityActive = ({ event, onClose }) => {

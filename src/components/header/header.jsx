@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -60,7 +60,7 @@ export const HeaderMenu = () => {
                             title="Cadastrar Doador"
                             name="cadastro_doador"
                             className={navMenuLi == "Cadastrar Doador" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Cadastrar Doador")}                        
+                            onClick={() => handlesMenuLiClick("Cadastrar Doador")}
                         >
                             <FontAwesomeIcon icon="fa-solid fa-user-plus" />
                             <span>Cadastrar Doador</span>
@@ -84,7 +84,7 @@ export const HeaderMenu = () => {
                             title="Editar Doador"
                             name="editar_doador"
                             className={navMenuLi == "Editar Doador" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Editar Doador")}                        
+                            onClick={() => handlesMenuLiClick("Editar Doador")}
                         >
                             <FontAwesomeIcon icon="fa-solid fa-user-pen" />
                             <span>Editar Doador</span>
@@ -96,7 +96,7 @@ export const HeaderMenu = () => {
                             title="Agendar Coleta"
                             name="agendar_coleta"
                             className={navMenuLi == "Agendar Coleta" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Agendar Coleta")}                        
+                            onClick={() => handlesMenuLiClick("Agendar Coleta")}
                         >
                             <FontAwesomeIcon icon="fa-regular fa-calendar-plus" />
                             <span>Agendar Coleta</span>
@@ -108,7 +108,7 @@ export const HeaderMenu = () => {
                             title="Confirmar Coleta"
                             name="confirmar_coleta"
                             className={navMenuLi == "Confirmar Coleta" ? "active" : ""}
-                            onClick={() => handlesMenuLiClick("Confirmar Coleta")}                        
+                            onClick={() => handlesMenuLiClick("Confirmar Coleta")}
                         >
                             <FontAwesomeIcon icon="fa-regular fa-calendar-check" />
                             <span>Confirmar Coleta</span>

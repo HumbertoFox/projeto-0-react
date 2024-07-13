@@ -1,4 +1,3 @@
-import React from "react";
 import { MainPrimary, MainSecondary } from "../style/mainpagestyle";
 import { HeaderMenu } from "../components/header/header";
 import { AgendaCalendar } from "../components/agenda/agenda";
