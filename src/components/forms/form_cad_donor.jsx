@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { viaCepApi } from "../../services/viacep";
-import { DivBtn, DivCnpj, DivCodDonor, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
+import { DivBtn, DivCnpj, DivCodDonor, DivNomeEdEmp, DivRadio, FormDonor } from "../../style/formcaddonorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
+export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
     const [radioSelect, setRadioSelect] = useState("");
 
-    const checkedZipCode = async (e) => {
+    const checkedZipCode = async (element) => {
 
         const clearZipCode = () => {
             setValue('zipcode', "");
@@ -16,20 +16,19 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
             setValue('city', "");
         };
 
-        if (!e.target.value) {
+        if (!element.target.value) {
             clearZipCode();
             setFocus('contact3');
             alert("Formato de CEP inválido.");
             return;
-        }
+        };
 
-        const zipcode = e.target.value.replace(/\D/g, '');
+        const zipcode = element.target.value.replace(/\D/g, '');
         var validazipcode = /^[0-9]{8}$/;
 
         try {
             if (validazipcode.test(zipcode)) {
-                const data = await viaCepApi.get(`${zipcode}/json/`)
-                    .then(res => res.data);
+                const data = await viaCepApi.get(`${zipcode}/json/`).then(res => res.data);
                 if (data && !data.erro) {
                     setValue('street', data.logradouro);
                     setValue('neighborhood', data.bairro);
@@ -39,24 +38,24 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
                     clearZipCode();
                     setFocus('contact3');
                     alert("CEP não encontrado.");
-                }
+                };
             } else {
                 clearZipCode();
                 setFocus('contact3');
                 alert("Formato de CEP inválido.");
-            }
+            };
         } catch (error) {
             console.error(error);
             clearZipCode();
             setFocus('contact3');
             alert(`Formato de CEP inválido ou não encontrado.`);
             return;
-        }
+        };
     };
 
-    const trocarRadioSelect = e => {
-        setRadioSelect(e.target.value);
-    }
+    const trocarRadioSelect = element => {
+        setRadioSelect(element.target.value);
+    };
 
     const {
         register,
@@ -68,9 +67,9 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
 
     const onSubmit = (element) => {
         console.log(element);
-    }
+    };
     return (
-        <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
+        <FormDonor method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Informações do Doador</Legend>
                 <DivCodDonor $donorCod={$donorCod}>
@@ -85,7 +84,7 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
                 <input type="tel" id="contact2" placeholder={`${errors.contact2 ? "Campo Obrigatório" : ""}`} className={`${errors.contact2 ? "required" : ""}`} {...register("contact2", { required: "Required field" })} />
                 <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
                 <input type="tel" id="contact3" {...register("contact3")} />
-                <label htmlFor="zipcode">Cep</label>
+                <label htmlFor="zipcode">CEP</label>
                 <input type="number" id="zipcode" {...register("zipcode")} onBlur={checkedZipCode} />
                 <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
                 <input type="text" id="street" placeholder={`${errors.street ? "Campo Obrigatório" : ""}`} className={`${errors.street ? "required" : ""}`} {...register("street", { required: "Required field" })} />
@@ -115,7 +114,7 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
                     <label htmlFor="enterprise">Empresa</label>
                 </DivRadio>
                 <DivCnpj className={radioSelect}>
-                    <label htmlFor="cnpj">Cnpj</label>
+                    <label htmlFor="cnpj">CNPJ</label>
                     <input type="number" id="cnpj" {...register("cnpj")} />
                 </DivCnpj>
                 <DivNomeEdEmp className={radioSelect}>
@@ -137,6 +136,6 @@ export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
                 <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />
                 <SubmitButton title="Cadastrar Doador" id="cadastrar_doador" value="Cadastrar Doador" />
             </DivBtn>
-        </FormDoador>
+        </FormDonor>
     );
 };

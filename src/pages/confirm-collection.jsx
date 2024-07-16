@@ -1,11 +1,11 @@
 import { MainPrimary, MainSecondary } from "../style/mainpagestyle";
 import { HeaderMenu } from "../components/header/header";
-export const AgendColetPage = () => {
+export const ConfirmCollectionPage = () => {
     return (
         <MainPrimary>
             <HeaderMenu />
             <MainSecondary>
-                <h1>Agendar Coleta</h1>
+                <h1>Confimar Coleta</h1>
             </MainSecondary>
         </MainPrimary>
     );

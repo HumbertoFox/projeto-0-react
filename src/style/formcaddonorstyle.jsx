@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import ImgAlert from "../assets/ponto-de-exclamacao.png";
-const FormDoador = styled.form`
+const FormDonor = styled.form`
     width: 280px;
     display: flex;
     flex-direction: column;
@@ -77,7 +77,7 @@ const DivRadio = styled.div`
 const DivCnpj = styled.div`
     display: flex;
     flex-direction: column;
-${({ className }) => {
+    ${({ className }) => {
         if (className === "house" || className === "building") {
             return css`
             display: none;
@@ -88,7 +88,7 @@ ${({ className }) => {
 const DivNomeEdEmp = styled.div`
     display: flex;
     flex-direction: column;
-${({ className }) => {
+    ${({ className }) => {
         if (className === "house") {
             return css`
             display: none;
@@ -112,4 +112,4 @@ const DivBtn = styled.div`
     display: flex;
     justify-content: space-evenly;
 `;
-export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivCodDonor, DivBtn };
+export { FormDonor, DivRadio, DivCnpj, DivNomeEdEmp, DivCodDonor, DivBtn };

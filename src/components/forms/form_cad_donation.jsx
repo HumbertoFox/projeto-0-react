@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDoacao } from "../../style/formcaddoacaostyle";
-import { DivBtn } from "../../style/formcaddoadorstyle";
+import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDonation } from "../../style/formcaddonationstyle";
+import { DivBtn } from "../../style/formcaddonorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormCadDoacao = ({ fieldsetdonor, coddonation }) => {
+export const FormCadDonation = ({ fieldsetdonor, coddonation }) => {
     const {
         register,
         handleSubmit,
@@ -14,7 +14,7 @@ export const FormCadDoacao = ({ fieldsetdonor, coddonation }) => {
         console.log(element);
     }
     return (
-        <FormDoacao onSubmit={handleSubmit(onSubmit)}>
+        <FormDonation onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Lista de objetos a serem doados</Legend>
                 <DivObj $codDonation={coddonation}>
@@ -170,6 +170,6 @@ export const FormCadDoacao = ({ fieldsetdonor, coddonation }) => {
                 <SubmitButton value="Cadastrar Doação" />
                 <SubmitButton value="Cadastrar e agendar" />
             </DivBtn>
-        </FormDoacao>
-    )
-}
+        </FormDonation>
+    );
+};

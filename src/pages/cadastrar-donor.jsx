@@ -1,12 +1,12 @@
-import { FormCadDoador } from "../components/forms/form_cad_doador";
+import { FormCadDonor } from "../components/forms/form_cad_donor";
 import { HeaderMenu } from "../components/header/header";
 import { MainPrimary, MainSecondary } from "../style/mainpagestyle";
-export const CadDoadorPage = () => {
+export const CadDonorPage = () => {
     return (
         <MainPrimary>
             <HeaderMenu />
             <MainSecondary>
-                <FormCadDoador $donorCod="disabled" />
+                <FormCadDonor $donorCod="disabled" />
             </MainSecondary>
         </MainPrimary>
     );

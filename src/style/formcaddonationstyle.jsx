@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import ImgAlert from "../assets/ponto-de-exclamacao.png";
 
-const FormDoacao = styled.form`
+const FormDonation = styled.form`
     max-width: 790px;
     display: flex;
     flex-direction: column;
@@ -133,4 +133,4 @@ const DivQuant = styled.div`
     }
 `;
 
-export { FormDoacao, DivObjPrimary, DivObjsQuant, DivObj, DivQuant };
+export { FormDonation, DivObjPrimary, DivObjsQuant, DivObj, DivQuant };

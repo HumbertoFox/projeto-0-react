@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { DivBtn } from "../../style/formcaddoadorstyle";
+import { DivBtn } from "../../style/formcaddonorstyle";
 import { FormSearch } from "../../style/formsearchstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormSearchDoacao = () => {
+export const FormSearchDonation = () => {
     const {
         register,
         handleSubmit,

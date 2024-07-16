@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const DivMainDoacao = styled.div`
+const DivMainDonation = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 5px;
@@ -8,7 +8,7 @@ const DivMainDoacao = styled.div`
         display: none;
     }
 `;
-const DivMainEditDoador = styled.div`
+const DivMainEditDonor = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 5px;
@@ -28,4 +28,4 @@ const DivToolbarCalendar = styled.div`
         cursor: pointer;
     }
 `;
-export { DivMainDoacao, DivMainEditDoador, DivAgenda, DivToolbarCalendar };
+export { DivMainDonation, DivMainEditDonor, DivAgenda, DivToolbarCalendar };
