@@ -96,8 +96,20 @@ ${({ className }) => {
         };
     }};
 `;
+const DivCodDonor = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    ${({ $donorCod }) => {
+        if ($donorCod) {
+            return css`
+                display: none;
+            `;
+        }
+    }}
+`;
 const DivBtn = styled.div`
     display: flex;
     justify-content: space-evenly;
 `;
-export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivBtn };
+export { FormDoador, DivRadio, DivCnpj, DivNomeEdEmp, DivCodDonor, DivBtn };

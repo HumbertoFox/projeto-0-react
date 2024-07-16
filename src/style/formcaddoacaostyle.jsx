@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ImgAlert from "../assets/ponto-de-exclamacao.png";
 
 const FormDoacao = styled.form`
@@ -105,6 +105,14 @@ const DivObj = styled.div`
             width: 280px;
         }
     }
+
+    ${({ $codDonation }) => {
+        if ($codDonation) {
+            return css`
+                display: none;
+            `;
+        }
+    }}
 `;
 
 const DivQuant = styled.div`

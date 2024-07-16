@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { viaCepApi } from "../../services/viacep";
-import { DivBtn, DivCnpj, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
+import { DivBtn, DivCnpj, DivCodDonor, DivNomeEdEmp, DivRadio, FormDoador } from "../../style/formcaddoadorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormCadDoador = ({ fieldsetdonor }) => {
+export const FormCadDoador = ({ fieldsetdonor, $donorCod }) => {
     const [radioSelect, setRadioSelect] = useState("");
 
     const checkedZipCode = async (e) => {
@@ -66,16 +66,17 @@ export const FormCadDoador = ({ fieldsetdonor }) => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = e => {
-        console.log(e);
+    const onSubmit = (element) => {
+        console.log(element);
     }
-
     return (
         <FormDoador method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Informações do Doador</Legend>
-                <label htmlFor="donorcode">Código do Doador</label>
-                <input type="text" id="donorcode" disabled={true} />
+                <DivCodDonor $donorCod={$donorCod}>
+                    <label htmlFor="donorcode">Código do Doador</label>
+                    <input type="text" id="donorcode" disabled={true} />
+                </DivCodDonor>
                 <label htmlFor="name">Nome do Doador</label>
                 <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`}{...register("name", { required: "Required field" })} />
                 <label htmlFor="contact1">Número Móvel do Responsável</label>

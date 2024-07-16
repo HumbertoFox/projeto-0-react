@@ -10,17 +10,16 @@ export const FormCadDoacao = ({ fieldsetdonor, coddonation }) => {
         formState: { errors }
     } = useForm();
 
-    const onSubmit = e => {
-        console.log(e);
+    const onSubmit = (element) => {
+        console.log(element);
     }
-
     return (
         <FormDoacao onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Lista de objetos a serem doados</Legend>
-                <DivObj>
+                <DivObj $codDonation={coddonation}>
                     <label htmlFor="codigodoacao">Código da Doação</label>
-                    <input type="text" id="codigodoacao" disabled={coddonation} />
+                    <input type="text" id="codigodoacao" disabled={true} />
                 </DivObj>
                 <DivObjPrimary>
                     <DivObjsQuant>

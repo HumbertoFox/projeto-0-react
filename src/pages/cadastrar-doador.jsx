@@ -6,7 +6,7 @@ export const CadDoadorPage = () => {
         <MainPrimary>
             <HeaderMenu />
             <MainSecondary>
-                <FormCadDoador />
+                <FormCadDoador $donorCod="disabled" />
             </MainSecondary>
         </MainPrimary>
     );

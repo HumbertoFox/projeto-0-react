@@ -13,7 +13,7 @@ export const EditDoacaoPage = () => {
                     <FormSearchDoacao />
                     <FormCadDoador fieldsetdonor="disabled" />
                 </DivMainDoacao>
-                <FormCadDoacao coddonation="disabled" />
+                <FormCadDoacao />
             </MainSecondary>
         </MainPrimary>
     );
