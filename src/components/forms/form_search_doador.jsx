@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { DivBtn } from "../../style/formcaddoadorstyle";
 import { FormSearch } from "../../style/formsearchstyle";
 import { SubmitButton } from "../button/button_submit";
+import { Legend } from "../legend/legend_component";
 export const FormSearchDoador = () => {
     const {
         register,
@@ -14,6 +15,7 @@ export const FormSearchDoador = () => {
     };
     return (
         <FormSearch onSubmit={handleSubmit(onSubmit)}>
+            <Legend>Pesquisar Doador</Legend>
             <label htmlFor="codnametel">Pesquisar Nome/Telefone/Código Doador</label>
             <input
                 type="search"

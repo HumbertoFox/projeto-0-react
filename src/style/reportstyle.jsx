@@ -8,6 +8,7 @@ const MainReport = styled.div`
     transition: .3s ease-in-out;
     h1 {
         font-size: 18px;
+        padding-bottom: 10px;
     }
     h1,
     h2 {

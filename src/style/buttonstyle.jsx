@@ -3,7 +3,7 @@ const Button = styled.button.attrs({ type: 'button' })`
     background-color: #AAF998;
     border-radius: 5px;
     text-shadow: 1px 1px 0.5px #79D1FF;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
     transition: .3s ease-in-out;
     &:hover {
@@ -15,7 +15,7 @@ const Submit = styled.input.attrs({ type: 'submit' })`
     background-color: #AAF998;
     border-radius: 5px;
     text-shadow: 1px 1px 0.5px #79D1FF;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
     transition: .3s ease-in-out;
     &:hover {
