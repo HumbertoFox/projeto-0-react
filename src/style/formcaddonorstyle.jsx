@@ -42,9 +42,13 @@ const FormDonor = styled.form`
         height: 70px;
         padding: 5px;
     }
-    input.required:focus {
+    input.required:focus,
+    textarea.required:focus {
         border: 1px solid hsla(332.47, 100%, 50%, .5);
         box-shadow: 0 0 5px hsla(332.47, 100%, 50%, .5);
+    }
+    textarea.required {
+        border: 1px solid hsla(332.47, 100%, 50%, .5);
     }
     input.required {
         border: 1px solid hsla(332.47, 100%, 50%, .5);

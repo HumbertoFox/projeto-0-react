@@ -7,6 +7,8 @@ import { Legend } from "../legend/legend_component";
 export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
     const [radioSelect, setRadioSelect] = useState("");
 
+    const { register, handleSubmit, setValue, setFocus, formState: { errors } } = useForm();
+
     const checkedZipCode = async (element) => {
 
         const clearZipCode = () => {
@@ -53,17 +55,14 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
         };
     };
 
-    const trocarRadioSelect = element => {
-        setRadioSelect(element.target.value);
+    const trocarRadioSelect = (element) => {
+        const elementValue = element.target.value;
+        setRadioSelect(elementValue);
+        setValue("cnpj", elementValue === "enterprise" ? "" : "...");
+        setValue("building", elementValue !== "house" ? "" : "...");
+        setValue("block", elementValue !== "house" ? "" : "...");
+        setValue("livingapartmentroom", elementValue !== "house" ? "" : "...");
     };
-
-    const {
-        register,
-        handleSubmit,
-        setValue,
-        setFocus,
-        formState: { errors }
-    } = useForm();
 
     const onSubmit = (element) => {
         console.log(element);
@@ -77,19 +76,19 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
                     <input type="text" id="donorcode" disabled={true} />
                 </DivCodDonor>
                 <label htmlFor="name">Nome do Doador</label>
-                <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`}{...register("name", { required: "Required field" })} />
+                <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`}{...register("name", { required: true })} />
                 <label htmlFor="contact1">Número Móvel do Responsável</label>
-                <input type="tel" id="contact1" placeholder={`${errors.contact1 ? "Campo Obrigatório" : ""}`} className={`${errors.contact1 ? "required" : ""}`} {...register("contact1", { required: "Required field" })} />
+                <input type="tel" id="contact1" placeholder={`${errors.contact1 ? "Campo Obrigatório" : ""}`} className={`${errors.contact1 ? "required" : ""}`} {...register("contact1", { required: true })} />
                 <label htmlFor="contact2">Número Móvel do Responsável/Opcional</label>
-                <input type="tel" id="contact2" placeholder={`${errors.contact2 ? "Campo Obrigatório" : ""}`} className={`${errors.contact2 ? "required" : ""}`} {...register("contact2", { required: "Required field" })} />
+                <input type="tel" id="contact2" placeholder={`${errors.contact2 ? "Campo Obrigatório" : ""}`} className={`${errors.contact2 ? "required" : ""}`} {...register("contact2", { required: true })} />
                 <label htmlFor="contact3">Número Fixo do Contato/Opcional ou Ramal</label>
                 <input type="tel" id="contact3" {...register("contact3")} />
                 <label htmlFor="zipcode">CEP</label>
                 <input type="number" id="zipcode" {...register("zipcode")} onBlur={checkedZipCode} />
                 <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
-                <input type="text" id="street" placeholder={`${errors.street ? "Campo Obrigatório" : ""}`} className={`${errors.street ? "required" : ""}`} {...register("street", { required: "Required field" })} />
+                <input type="text" id="street" placeholder={`${errors.street ? "Campo Obrigatório" : ""}`} className={`${errors.street ? "required" : ""}`} {...register("street", { required: true })} />
                 <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
-                <input type="text" id="nunresidence" placeholder={`${errors.nunresidence ? "Campo Obrigatório" : ""}`} className={`${errors.nunresidence ? "required" : ""}`} {...register("nunresidence", { required: "Required field" })} />
+                <input type="text" id="nunresidence" placeholder={`${errors.nunresidence ? "Campo Obrigatório" : ""}`} className={`${errors.nunresidence ? "required" : ""}`} {...register("nunresidence", { required: true })} />
                 <DivRadio>
                     <input type="radio"
                         id="house"
@@ -115,22 +114,22 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
                 </DivRadio>
                 <DivCnpj className={radioSelect}>
                     <label htmlFor="cnpj">CNPJ</label>
-                    <input type="number" id="cnpj" {...register("cnpj")} />
+                    <input type="text" id="cnpj" placeholder={`${errors.cnpj ? "Campo Obrigatório" : ""}`} className={`${errors.cnpj ? "required" : ""}`} {...register("cnpj", { required: true })} />
                 </DivCnpj>
                 <DivNomeEdEmp className={radioSelect}>
                     <label htmlFor="building">Nome do Edifício/Empresa</label>
-                    <input type="text" id="building" {...register("building")} />
+                    <input type="text" id="building" placeholder={`${errors.building ? "Campo Obrigatório" : ""}`} className={`${errors.building ? "required" : ""}`} {...register("building", { required: true })} />
                     <label htmlFor="block">Bloco</label>
-                    <input type="text" id="block" {...register("block")} />
+                    <input type="text" id="block" placeholder={`${errors.block ? "Campo Obrigatório" : ""}`} className={`${errors.block ? "required" : ""}`} {...register("block", { required: true })} />
                     <label htmlFor="livingapartmentroom">Apartamento/Sala</label>
-                    <input type="text" id="livingapartmentroom" {...register("livingapartmentroom")} />
+                    <input type="text" id="livingapartmentroom" placeholder={`${errors.livingapartmentroom ? "Campo Obrigatório" : ""}`} className={`${errors.livingapartmentroom ? "required" : ""}`} {...register("livingapartmentroom", { required: true })} />
                 </DivNomeEdEmp>
                 <label htmlFor="referencepoint">Ponto de Referência</label>
-                <textarea id="referencepoint" {...register("referencepoint")} ></textarea>
+                <textarea id="referencepoint" placeholder={`${errors.referencepoint ? "Campo Obrigatório" : ""}`} className={`${errors.referencepoint ? "required" : ""}`} {...register("referencepoint", { required: true })}></textarea>
                 <label htmlFor="neighborhood">Bairro/Distrito</label>
-                <input type="text" id="neighborhood" placeholder={`${errors.neighborhood ? "Campo Obrigatório" : ""}`} className={`${errors.neighborhood ? "required" : ""}`} {...register("neighborhood", { required: "Required field" })} />
+                <input type="text" id="neighborhood" placeholder={`${errors.neighborhood ? "Campo Obrigatório" : ""}`} className={`${errors.neighborhood ? "required" : ""}`} {...register("neighborhood", { required: true })} />
                 <label htmlFor="city">Cidade</label>
-                <input type="text" id="city" placeholder={`${errors.city ? "Campo Obrigatório" : ""}`} className={`${errors.city ? "required" : ""}`} {...register("city", { required: "Required field" })} />
+                <input type="text" id="city" placeholder={`${errors.city ? "Campo Obrigatório" : ""}`} className={`${errors.city ? "required" : ""}`} {...register("city", { required: true })} />
             </fieldset>
             <DivBtn>
                 <SubmitButton title="Cadastrar Doador e ir para Cadastrar Doação" id="cadastrar_doacao" value="Cad Doador/Doação" />

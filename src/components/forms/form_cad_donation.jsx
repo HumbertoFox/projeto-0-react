@@ -4,15 +4,11 @@ import { DivBtn } from "../../style/formcaddonorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
 export const FormCadDonation = ({ fieldsetdonor, coddonation }) => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (element) => {
         console.log(element);
-    }
+    };
     return (
         <FormDonation onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
@@ -25,11 +21,11 @@ export const FormCadDonation = ({ fieldsetdonor, coddonation }) => {
                     <DivObjsQuant>
                         <DivObj>
                             <label htmlFor="objeto1">objeto 1</label>
-                            <input type="text" id="objeto1" placeholder={`${errors.objeto1 ? "Campo Obrigatório" : ""}`} className={`${errors.objeto1 ? "required" : ""}`} {...register("objeto1", { required: "Required field" })} />
+                            <input type="text" id="objeto1" placeholder={`${errors.objeto1 ? "Campo Obrigatório" : ""}`} className={`${errors.objeto1 ? "required" : ""}`} {...register("objeto1", { required: true })} />
                         </DivObj>
                         <DivQuant>
                             <label htmlFor="quant1">Qantidade/Caixa/Sacola</label>
-                            <input type="text" id="quant1" placeholder={`${errors.quant1 ? "Obrigatório" : ""}`} className={`${errors.quant1 ? "required" : ""}`} {...register("quant1", { required: "Required field" })} />
+                            <input type="text" id="quant1" placeholder={`${errors.quant1 ? "Obrigatório" : ""}`} className={`${errors.quant1 ? "required" : ""}`} {...register("quant1", { required: true })} />
                         </DivQuant>
                     </DivObjsQuant>
                     <DivObjsQuant>
