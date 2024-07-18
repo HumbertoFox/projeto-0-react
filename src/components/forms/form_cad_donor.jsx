@@ -9,7 +9,6 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod, searchDonor }) => {
     const { register, handleSubmit, setValue, setFocus, formState: { errors } } = useForm();
     
     const checkedZipCode = async (element) => {
-
         const clearZipCode = () => {
             setValue('zipcode', "");
             setValue('street', "");

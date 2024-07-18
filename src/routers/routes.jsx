@@ -7,6 +7,8 @@ import { EditDonationPage } from "../pages/editar-donation";
 import { AgendCollectionPage } from "../pages/agendar-collection";
 import { ConfirmCollectionPage } from "../pages/confirm-collection";
 import { AgendCalendarPage } from "../pages/agenda-calendar";
+import { MenuPage } from "../pages/menu";
+import { CadDriverPage } from "../pages/cadastrar-driver";
 export const AppRouters = () => {
     return (
         <BrowserRouter>
@@ -19,6 +21,8 @@ export const AppRouters = () => {
                 <Route path="/AgendarColeta" element={<AgendCollectionPage />} />
                 <Route path="/ConfirmColeta" element={<ConfirmCollectionPage />} />
                 <Route path="/Agenda" element={<AgendCalendarPage />} />
+                <Route path="/Menu" element={<MenuPage />} />
+                <Route path="/CadastroMotorista" element={<CadDriverPage />} />
                 <Route path="*" element={<AgendCalendarPage />} />
             </Routes>
         </BrowserRouter>
