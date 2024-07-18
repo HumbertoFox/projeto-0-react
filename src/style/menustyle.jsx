@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MenuMain = styled.main`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,13 +11,14 @@ const MenuMain = styled.main`
 
 const MenuDiv = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 50px;
     padding: 50px;
     border: solid 1px #79D1FF;
+    border-radius: 15px;
 
     svg {
         color: #AAF998;
-        font-size: 50px;
+        font-size: 70px;
         transition: .4s ease-in-out;
     }
     svg:hover {
@@ -25,4 +26,20 @@ const MenuDiv = styled.div`
     }
 `;
 
-export { MenuMain, MenuDiv };
+const MenuFormDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #AAF998;
+    border-radius: 15px;
+
+    svg {
+        font-size: 90px;
+        color: #79D1FF;
+    }
+`;
+
+export { MenuMain, MenuDiv, MenuFormDiv };
