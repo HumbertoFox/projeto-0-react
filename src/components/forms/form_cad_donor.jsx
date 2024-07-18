@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { viaCepApi } from "../../services/viacep";
 import { DivBtn, DivCnpj, DivCodDonor, DivNomeEdEmp, DivRadio, FormDonor } from "../../style/formcaddonorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
+export const FormCadDonor = ({ fieldsetdonor, $donorCod, searchDonor }) => {
     const [radioSelect, setRadioSelect] = useState("");
-
     const { register, handleSubmit, setValue, setFocus, formState: { errors } } = useForm();
-
+    
     const checkedZipCode = async (element) => {
 
         const clearZipCode = () => {
@@ -54,7 +53,6 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
             return;
         };
     };
-
     const trocarRadioSelect = (element) => {
         const elementValue = element.target.value;
         setRadioSelect(elementValue);
@@ -63,20 +61,25 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod }) => {
         setValue("block", elementValue !== "house" ? "" : "...");
         setValue("livingapartmentroom", elementValue !== "house" ? "" : "...");
     };
-
     const onSubmit = (element) => {
         console.log(element);
     };
+    
+    useEffect(() => {
+        if (searchDonor) {
+            setValue("donorcode", searchDonor.codnametel);
+        };
+    }, [searchDonor]);
     return (
-        <FormDonor method="POST" action="" onSubmit={handleSubmit(onSubmit)}>
+        <FormDonor onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Informações do Doador</Legend>
                 <DivCodDonor $donorCod={$donorCod}>
                     <label htmlFor="donorcode">Código do Doador</label>
-                    <input type="text" id="donorcode" disabled={true} />
+                    <input type="text" id="donorcode" disabled={true} {...register("donorcode")} />
                 </DivCodDonor>
                 <label htmlFor="name">Nome do Doador</label>
-                <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`}{...register("name", { required: true })} />
+                <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`} {...register("name", { required: true })} />
                 <label htmlFor="contact1">Número Móvel do Responsável</label>
                 <input type="tel" id="contact1" placeholder={`${errors.contact1 ? "Campo Obrigatório" : ""}`} className={`${errors.contact1 ? "required" : ""}`} {...register("contact1", { required: true })} />
                 <label htmlFor="contact2">Número Móvel do Responsável/Opcional</label>

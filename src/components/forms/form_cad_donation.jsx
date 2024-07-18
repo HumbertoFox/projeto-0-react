@@ -1,22 +1,37 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDonation } from "../../style/formcaddonationstyle";
+import { DivCods, DivObj, DivObjPrimary, DivObjsQuant, DivQuant, FormDonation } from "../../style/formcaddonationstyle";
 import { DivBtn } from "../../style/formcaddonorstyle";
 import { SubmitButton } from "../button/button_submit";
 import { Legend } from "../legend/legend_component";
-export const FormCadDonation = ({ fieldsetdonor, coddonation }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+export const FormCadDonation = ({ fieldsetdonor, coddonation, searchDonor, searchDonation }) => {
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
     const onSubmit = (element) => {
         console.log(element);
     };
+
+    useEffect(() => {
+        if (searchDonor) {
+            setValue("donorcode", searchDonor.codnametel);
+        } else if (searchDonation) {
+            setValue("coddonation", searchDonation.coddonation)
+        };
+    }, [searchDonor, searchDonation]);
     return (
         <FormDonation onSubmit={handleSubmit(onSubmit)}>
             <fieldset disabled={fieldsetdonor}>
                 <Legend>Lista de objetos a serem doados</Legend>
-                <DivObj $codDonation={coddonation}>
-                    <label htmlFor="codigodoacao">Código da Doação</label>
-                    <input type="text" id="codigodoacao" disabled={true} />
-                </DivObj>
+                <DivCods>
+                    <DivObj $codDonation={coddonation}>
+                        <label htmlFor="coddonation">Código da Doação</label>
+                        <input type="text" id="coddonation" disabled={true} placeholder={`${errors.coddonation ? "Campo Obrigatório" : ""}`} className={`${errors.coddonation ? "required" : ""}`} {...register("coddonation", { required: true })} />
+                    </DivObj>
+                    <DivObj>
+                        <label htmlFor="donorcode">Código do Doador</label>
+                        <input type="text" id="donorcode" disabled={true} placeholder={`${errors.donorcode ? "Campo Obrigatório" : ""}`} className={`${errors.donorcode ? "required" : ""}`} {...register("donorcode", { required: true })} />
+                    </DivObj>
+                </DivCods>
                 <DivObjPrimary>
                     <DivObjsQuant>
                         <DivObj>

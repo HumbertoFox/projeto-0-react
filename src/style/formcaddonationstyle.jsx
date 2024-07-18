@@ -133,4 +133,10 @@ const DivQuant = styled.div`
     }
 `;
 
-export { FormDonation, DivObjPrimary, DivObjsQuant, DivObj, DivQuant };
+const DivCods = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+`;
+
+export { FormDonation, DivObjPrimary, DivObjsQuant, DivObj, DivQuant, DivCods };
