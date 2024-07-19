@@ -11,6 +11,8 @@ const MenuMain = styled.main`
 
 const MenuDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
     padding: 50px;
     border: solid 1px #79D1FF;
@@ -23,6 +25,10 @@ const MenuDiv = styled.div`
     }
     svg:hover {
         color: #79D1FF;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 375px;
     }
 `;
 
@@ -39,6 +45,10 @@ const MenuFormDiv = styled.div`
     svg {
         font-size: 90px;
         color: #79D1FF;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 375px;
     }
 `;
 

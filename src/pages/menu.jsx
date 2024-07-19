@@ -9,11 +9,17 @@ export const MenuPage = () => {
     return (
         <MenuMain>
             <MenuDiv>
-                <Link to={"/"}>
+                <Link title="Inicio" to={"/"}>
+                    <FontAwesomeIcon icon="fa-solid fa-house" />
+                </Link>
+                <Link title="Cadastrar Veiculo" to={"/"}>
                     <FontAwesomeIcon icon="fa-solid fa-truck" />
                 </Link>
-                <Link to={"/CadastroMotorista"}>
+                <Link title="Cadastrar Motorista" to={"/CadastroMotorista"}>
                     <FontAwesomeIcon icon="fa-solid fa-id-card" />
+                </Link>
+                <Link title="Cadastrar Ajudante" to={"/CadastrarAjudante"}>
+                    <FontAwesomeIcon icon="fa-solid fa-person-shelter" />
                 </Link>
             </MenuDiv>
         </MenuMain>
