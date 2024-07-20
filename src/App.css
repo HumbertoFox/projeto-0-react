@@ -8,12 +8,6 @@
     box-sizing: border-box;
 }
 
-body,
-#root {
-    max-width: 1440px;
-    min-height: 100vh;
-}
-
 a {
     text-decoration: none;
     color: black;

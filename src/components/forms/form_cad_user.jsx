@@ -7,7 +7,7 @@ import { Legend } from "../legend/legend_component";
 import { SubmitButton } from "../button/button_submit";
 import { ButtonButton } from "../button/buttonbutton";
 
-export const FormCadDriver = () => {
+export const FormCadUser = () => {
     const navidate = useNavigate();
     const [radioSelect, setRadioSelect] = useState("");
     const { register, handleSubmit, setValue, setFocus, formState: { errors } } = useForm();
@@ -22,7 +22,7 @@ export const FormCadDriver = () => {
 
         if (!element.target.value) {
             clearZipCode();
-            setFocus("cnh");
+            setFocus("cpf");
             alert("Formato de CEP inválido.");
             return;
         };
@@ -40,18 +40,18 @@ export const FormCadDriver = () => {
                     setFocus("nunresidence");
                 } else {
                     clearZipCode();
-                    setFocus("cnh");
+                    setFocus("cpf");
                     alert("CEP não encontrado.");
                 };
             } else {
                 clearZipCode();
-                setFocus("cnh");
+                setFocus("cpf");
                 alert("Formato de CEP inválido.");
             };
         } catch (error) {
             console.error(error);
             clearZipCode();
-            setFocus("cnh");
+            setFocus("cpf");
             alert(`Formato de CEP inválido ou não encontrado.`);
             return;
         };
@@ -68,11 +68,11 @@ export const FormCadDriver = () => {
     };
     return (
         <FormDonor onSubmit={handleSubmit(onSubmit)}>
-            <Legend>Dados do Motorista</Legend>
+            <Legend>Dados do Usuário</Legend>
             <label htmlFor="name">Nome</label>
             <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`} {...register("name", { required: true })} />
-            <label htmlFor="cnh">CNH</label>
-            <input type="number" id="cnh" placeholder={`${errors.cnh ? "Campo Obrigatório" : ""}`} className={`${errors.cnh ? "required" : ""}`} {...register("cnh", { required: true })} />
+            <label htmlFor="cpf">CPF</label>
+            <input type="number" id="cpf" placeholder={`${errors.cpf ? "Campo Obrigatório" : ""}`} className={`${errors.cpf ? "required" : ""}`} {...register("cpf", { required: true })} />
             <label htmlFor="zipcode">CEP</label>
             <input type="number" id="zipcode" {...register("zipcode")} onBlur={checkedZipCode} />
             <label htmlFor="street">Logradouro: Av/Travessa/Rua</label>
@@ -97,8 +97,12 @@ export const FormCadDriver = () => {
             <input type="text" id="neighborhod" placeholder={`${errors.neighborhod ? "Campo Obrigatório" : ""}`} className={`${errors.neighborhod ? "required" : ""}`} {...register("neighborhod", { required: true })} />
             <label htmlFor="city">Cidade</label>
             <input type="text" id="city" placeholder={`${errors.city ? "Campo Obrigatório" : ""}`} className={`${errors.city ? "required" : ""}`} {...register("city", { required: true })} />
+            <label htmlFor="password">Senha</label>
+            <input type="password" id="password" autoComplete="off" placeholder={`${errors.password ? "Campo Obrigatório" : ""}`} className={`${errors.password ? "required" : ""}`} {...register("password", { required: true })} />
+            <label htmlFor="checkedpassword">Confirmar Senha</label>
+            <input type="password" id="checkedpassword" autoComplete="off" placeholder={`${errors.checkedpassword ? "Campo Obrigatório" : ""}`} className={`${errors.checkedpassword ? "required" : ""}`} {...register("checkedpassword", { required: true, validate: (value) => value === password })} />
             <DivBtn>
-                <SubmitButton title="Cadastrar Motorista" value="Cadastrar" />
+                <SubmitButton title="Cadastrar Ajudante" value="Cadastrar" />
                 <ButtonButton title="Voltar ao Menu" onClick={() => navidate("/Menu")}>Menu</ButtonButton>
             </DivBtn>
         </FormDonor>

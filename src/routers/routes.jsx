@@ -10,6 +10,7 @@ import { AgendCalendarPage } from "../pages/agenda-calendar";
 import { MenuPage } from "../pages/menu";
 import { CadDriverPage } from "../pages/cadastrar-driver";
 import { CadHelperPage } from "../pages/cadastrar-helper";
+import { CadUserPage } from "../pages/cadastrar-user";
 export const AppRouters = () => {
     return (
         <BrowserRouter>
@@ -25,6 +26,7 @@ export const AppRouters = () => {
                 <Route path="/Menu" element={<MenuPage />} />
                 <Route path="/CadastroMotorista" element={<CadDriverPage />} />
                 <Route path="/CadastrarAjudante" element={<CadHelperPage />} />
+                <Route path="/CadastrarUsuario" element={<CadUserPage />} />
                 <Route path="*" element={<AgendCalendarPage />} />
             </Routes>
         </BrowserRouter>

@@ -64,7 +64,7 @@ const FormDonation = styled.form`
         }
     }
     @media (max-width: 480px) {
-        width: 100%;
+        width: 280px;
 
         textarea {
             width: 280px;

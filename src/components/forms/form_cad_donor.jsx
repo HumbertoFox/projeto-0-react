@@ -92,26 +92,11 @@ export const FormCadDonor = ({ fieldsetdonor, $donorCod, searchDonor }) => {
                 <label htmlFor="nunresidence">Número da Casa/Edifício/Empresa</label>
                 <input type="text" id="nunresidence" placeholder={`${errors.nunresidence ? "Campo Obrigatório" : ""}`} className={`${errors.nunresidence ? "required" : ""}`} {...register("nunresidence", { required: true })} />
                 <DivRadio>
-                    <input type="radio"
-                        id="house"
-                        value="house"
-                        checked={radioSelect === "house" ? true : false}
-                        onChange={trocarRadioSelect}
-                    />
+                    <input type="radio" id="house" value="house" checked={radioSelect === "house" ? true : false} onChange={trocarRadioSelect} />
                     <label htmlFor="house">Casa</label>
-                    <input type="radio"
-                        id="building"
-                        value="building"
-                        checked={radioSelect === "building" ? true : false}
-                        onChange={trocarRadioSelect}
-                    />
-                    <label htmlFor="building">Edifício</label>
-                    <input type="radio"
-                        id="enterprise"
-                        value="enterprise"
-                        checked={radioSelect === "enterprise" ? true : false}
-                        onChange={trocarRadioSelect}
-                    />
+                    <input type="radio" id="buildings" value="building" checked={radioSelect === "building" ? true : false} onChange={trocarRadioSelect} />
+                    <label htmlFor="buildings">Edifício</label>
+                    <input type="radio" id="enterprise" value="enterprise" checked={radioSelect === "enterprise" ? true : false} onChange={trocarRadioSelect} />
                     <label htmlFor="enterprise">Empresa</label>
                 </DivRadio>
                 <DivCnpj className={radioSelect}>

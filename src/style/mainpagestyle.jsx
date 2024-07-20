@@ -1,6 +1,6 @@
 import styled from "styled-components";
 const MainPrimary = styled.main`
-    width: 100%;
+    max-width: 1440px;
     min-height: 100vh;
     display: flex;
     @media (max-width: 480px) {

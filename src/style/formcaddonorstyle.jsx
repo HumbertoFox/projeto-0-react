@@ -21,6 +21,7 @@ const FormDonor = styled.form`
     input[type="text"],
     input[type="number"],
     input[type="tel"],
+    input[type="password"],
     textarea {
         height: 30px;
         font-size: 15px;
@@ -34,6 +35,7 @@ const FormDonor = styled.form`
     input[type=text]:focus,
     input[type="number"]:focus,
     input[type="tel"]:focus,
+    input[type="password"]:focus,
     textarea:focus {
         border: 1px solid hsla(205.46, 86.5%, 46.47%, .5);
         box-shadow: 0 0 5px hsla(205.46, 86.5%, 46.47%, .5);

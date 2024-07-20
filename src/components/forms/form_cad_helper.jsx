@@ -68,7 +68,7 @@ export const FormCadHelper = () => {
     };
     return (
         <FormDonor onSubmit={handleSubmit(onSubmit)}>
-            <Legend>Dados do Motorista</Legend>
+            <Legend>Dados do Ajudante</Legend>
             <label htmlFor="name">Nome</label>
             <input type="text" id="name" placeholder={`${errors.name ? "Campo Obrigatório" : ""}`} className={`${errors.name ? "required" : ""}`} {...register("name", { required: true })} />
             <label htmlFor="cpf">CPF</label>
@@ -82,8 +82,8 @@ export const FormCadHelper = () => {
             <DivRadio>
                 <input type="radio" id="house" value="house" checked={radioSelect === "house" ? true : false} onChange={trocarRadioSelect} />
                 <label htmlFor="house">Casa</label>
-                <input type="radio" id="building" value="building" checked={radioSelect === "building" ? true : false} onChange={trocarRadioSelect} />
-                <label htmlFor="building">Edifício</label>
+                <input type="radio" id="buildings" value="building" checked={radioSelect === "building" ? true : false} onChange={trocarRadioSelect} />
+                <label htmlFor="buildings">Edifício</label>
             </DivRadio>
             <DivNomeEdEmp className={radioSelect}>
                 <label htmlFor="building">Nome do Edifício/Empresa</label>
