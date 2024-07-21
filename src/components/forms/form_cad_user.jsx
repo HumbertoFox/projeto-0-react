@@ -10,7 +10,8 @@ import { ButtonButton } from "../button/buttonbutton";
 export const FormCadUser = () => {
     const navidate = useNavigate();
     const [radioSelect, setRadioSelect] = useState("");
-    const { register, handleSubmit, setValue, setFocus, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, setFocus, watch, formState: { errors } } = useForm();
+    const password = watch("password");
 
     const checkedZipCode = async (element) => {
         const clearZipCode = () => {
