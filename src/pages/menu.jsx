@@ -15,7 +15,7 @@ export const MenuPage = () => {
                 <Link title="Cadastrar Usuário" to={"/CadastrarUsuario"}>
                     <FontAwesomeIcon icon="fa-solid fa-chalkboard-user" />
                 </Link>
-                <Link title="Cadastrar Veiculo" to={"/"}>
+                <Link title="Cadastrar Veiculo" to={"/CadastrarVeiculo"}>
                     <FontAwesomeIcon icon="fa-solid fa-truck" />
                 </Link>
                 <Link title="Cadastrar Motorista" to={"/CadastroMotorista"}>
